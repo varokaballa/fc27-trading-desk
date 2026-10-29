@@ -2,20 +2,20 @@
 // Cache-Control: 5-min edge cache with 60s stale-while-revalidate
 
 const PLAYERS = [
-  { eaId: 231747, name: "K. Mbappé", rating: 91, position: "ST", category: "meta", benchmark: 3280000 },
-  { eaId: 227203, name: "Alexia Putellas", rating: 90, position: "CM", category: "meta", benchmark: 920000 },
-  { eaId: 238794, name: "Vinícius Jr.", rating: 90, position: "LW", category: "meta", benchmark: 890000 },
-  { eaId: 203376, name: "Virgil van Dijk", rating: 89, position: "CB", category: "meta", benchmark: 320000 },
-  { eaId: 253293, name: "F. Valverde", rating: 88, position: "CM", category: "meta", benchmark: 290000 },
-  { eaId: 241667, name: "Aitana Bonmatí", rating: 91, position: "CM", category: "meta", benchmark: 285000 },
-  { eaId: 227102, name: "C. Graham Hansen", rating: 90, position: "RW", category: "meta", benchmark: 240000 },
-  { eaId: 239085, name: "Erling Haaland", rating: 91, position: "ST", category: "meta", benchmark: 180000 },
-  { eaId: 271295, name: "Lamine Yamal", rating: 86, position: "RW", category: "meta", benchmark: 165000 },
-  { eaId: 256790, name: "Jude Bellingham", rating: 90, position: "CAM", category: "meta", benchmark: 155000 },
-  { eaId: 241928, name: "W. Saliba", rating: 87, position: "CB", category: "meta", benchmark: 145000 },
-  { eaId: 239682, name: "Theo Hernández", rating: 87, position: "LB", category: "meta", benchmark: 120000 },
-  { eaId: 243812, name: "Rodrygo", rating: 86, position: "RW", category: "meta", benchmark: 110000 },
-  { eaId: 228618, name: "Ferland Mendy", rating: 84, position: "LB", category: "meta", benchmark: 95000 },
+  { eaId: 231747, name: "K. Mbappé", rating: 91, position: "ST", category: "meta", benchmark: 2950000 },
+  { eaId: 238794, name: "Vinícius Jr.", rating: 89, position: "LW", category: "meta", benchmark: 700000 },
+  { eaId: 227203, name: "Alexia Putellas", rating: 90, position: "CM", category: "meta", benchmark: 680000 },
+  { eaId: 227102, name: "C. Graham Hansen", rating: 90, position: "RW", category: "meta", benchmark: 210000 },
+  { eaId: 203376, name: "Virgil van Dijk", rating: 89, position: "CB", category: "meta", benchmark: 195000 },
+  { eaId: 241667, name: "Aitana Bonmatí", rating: 91, position: "CM", category: "meta", benchmark: 190000 },
+  { eaId: 253293, name: "F. Valverde", rating: 88, position: "CM", category: "meta", benchmark: 185000 },
+  { eaId: 256790, name: "Jude Bellingham", rating: 90, position: "CAM", category: "meta", benchmark: 135000 },
+  { eaId: 239085, name: "Erling Haaland", rating: 91, position: "ST", category: "meta", benchmark: 130000 },
+  { eaId: 241928, name: "W. Saliba", rating: 87, position: "CB", category: "meta", benchmark: 82000 },
+  { eaId: 271295, name: "Lamine Yamal", rating: 86, position: "RW", category: "meta", benchmark: 75000 },
+  { eaId: 239682, name: "Theo Hernández", rating: 87, position: "LB", category: "meta", benchmark: 62000 },
+  { eaId: 228618, name: "Ferland Mendy", rating: 84, position: "LB", category: "meta", benchmark: 55000 },
+  { eaId: 243812, name: "Rodrygo", rating: 86, position: "RW", category: "meta", benchmark: 42000 },
 ];
 
 const USER_AGENT =
