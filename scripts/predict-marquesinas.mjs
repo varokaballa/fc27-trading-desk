@@ -91,16 +91,41 @@ async function main() {
     console.log(`🔮 Generando predicciones de Marquesinas para la semana ${currentWeek}...`);
     console.log(`📅 Fecha: ${isoDate}\n`);
 
-    const response = await ai.models.generateContent({
-      model: "gemini-3.8-flash",
-      contents: [{ role: "user", parts: [{ text: prompt }] }],
-      config: {
-        tools: [{ googleSearch: {} }],
-        responseMimeType: "application/json",
-      },
-    });
+    let text = null;
+    const attempts = [
+      { model: "gemini-2.0-flash", search: true },
+      { model: "gemini-2.0-flash", search: false },
+      { model: "gemini-1.5-flash", search: false },
+      { model: "gemini-3.8-flash", search: false }
+    ];
 
-    const text = response.text;
+    for (const att of attempts) {
+      try {
+        console.log(`🔄 Intentando generar con ${att.model} (Google Search: ${att.search})...`);
+        const config = { responseMimeType: "application/json" };
+        if (att.search) {
+          config.tools = [{ googleSearch: {} }];
+        }
+        const response = await ai.models.generateContent({
+          model: att.model,
+          contents: [{ role: "user", parts: [{ text: prompt }] }],
+          config,
+        });
+        if (response && response.text) {
+          text = response.text;
+          console.log(`✅ Respuesta obtenida con ${att.model}`);
+          break;
+        }
+      } catch (err) {
+        console.warn(`⚠️ No disponible con ${att.model}: ${err.message}`);
+      }
+    }
+
+    if (!text) {
+      console.warn("⚠️ Ningún modelo respondió a tiempo. Manteniendo datos de Marquesinas existentes.");
+      process.exit(0);
+    }
+
     const data = JSON.parse(text);
 
     // Ensure output directories exist and write to both public/data and data/
@@ -122,10 +147,8 @@ async function main() {
     }
   } catch (error) {
     console.error("❌ Error generando predicciones:", error.message);
-    if (error.stack) {
-      console.error(error.stack);
-    }
-    process.exit(1);
+    console.warn("⚠️ Manteniendo predicciones existentes para evitar interrumpir la web.");
+    process.exit(0);
   }
 }
 
