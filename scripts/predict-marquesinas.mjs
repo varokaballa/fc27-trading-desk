@@ -103,15 +103,18 @@ async function main() {
     const text = response.text;
     const data = JSON.parse(text);
 
-    // Ensure output directory exists
-    const outputDir = path.resolve("./public/data");
-    fs.mkdirSync(outputDir, { recursive: true });
+    // Ensure output directories exist and write to both public/data and data/
+    const publicDir = path.resolve("./public/data");
+    const dataDir = path.resolve("./data");
+    fs.mkdirSync(publicDir, { recursive: true });
+    fs.mkdirSync(dataDir, { recursive: true });
 
-    const outputPath = path.join(outputDir, "marquesinas.json");
-    fs.writeFileSync(outputPath, JSON.stringify(data, null, 2), "utf-8");
+    const jsonStr = JSON.stringify(data, null, 2);
+    fs.writeFileSync(path.join(publicDir, "marquesinas.json"), jsonStr, "utf-8");
+    fs.writeFileSync(path.join(dataDir, "marquesinas.json"), jsonStr, "utf-8");
 
     console.log(`✅ Predicciones generadas exitosamente`);
-    console.log(`📁 Archivo guardado en: ${outputPath}`);
+    console.log(`📁 Archivos guardados en: public/data/marquesinas.json y data/marquesinas.json`);
     console.log(`\n📊 Resumen de predicciones:`);
 
     for (const p of data.predictions) {
