@@ -1,0 +1,12 @@
+{
+  "name": "fc27-trading-desk",
+  "version": "2.0.0",
+  "description": "FC 27 Trading Desk Pro - Terminal de Mercado & Alertas Diarias",
+  "type": "module",
+  "scripts": {
+    "predict": "node scripts/predict-marquesinas.mjs"
+  },
+  "dependencies": {
+    "@google/genai": "^0.1.1"
+  }
+}

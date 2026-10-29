@@ -1,0 +1,63 @@
+{
+  "week": "2026-W44",
+  "generatedAt": "2026-10-29T09:00:00.000Z",
+  "source": "Gemini 2.5 Flash + Google Search Grounding",
+  "predictions": [
+    {
+      "league": "Premier League",
+      "home": "Arsenal",
+      "away": "Chelsea",
+      "certainty": "green",
+      "certainty_label": "🟢 CLÁSICO FIJO",
+      "gold_buy": 650,
+      "gold_sell": 2200,
+      "silver_buy": 400,
+      "silver_sell": 1500,
+      "breakeven_gold": 685,
+      "roi_gold_pct": 221,
+      "strategy": "Derbi de Londres de máxima rivalidad. Absorción masiva en los primeros 45 minutos. Comprar en puja masiva el martes de madrugada a descarte."
+    },
+    {
+      "league": "Serie A Enilive",
+      "home": "Juventus",
+      "away": "AC Milan",
+      "certainty": "green",
+      "certainty_label": "🟢 CLÁSICO FIJO",
+      "gold_buy": 650,
+      "gold_sell": 2100,
+      "silver_buy": 350,
+      "silver_sell": 1300,
+      "breakeven_gold": 685,
+      "roi_gold_pct": 207,
+      "strategy": "Choque histórico del norte de Italia. Oros de la Serie A de 78-82 OVR de ambos clubes se triplican en la primera hora del SBC."
+    },
+    {
+      "league": "Bundesliga",
+      "home": "Eintracht Frankfurt",
+      "away": "Borussia Dortmund",
+      "certainty": "blue",
+      "certainty_label": "🔵 MUY PROBABLE",
+      "gold_buy": 600,
+      "gold_sell": 1700,
+      "silver_buy": 350,
+      "silver_sell": 1100,
+      "breakeven_gold": 632,
+      "roi_gold_pct": 169,
+      "strategy": "Duelo clave por puestos de Champions. Patrón de rotación de EA para la liga alemana sin repetir Bayern."
+    },
+    {
+      "league": "Liga Portugal Betclic",
+      "home": "Sporting CP",
+      "away": "SL Benfica",
+      "certainty": "blue",
+      "certainty_label": "🔵 DERBI DE LISBOA",
+      "gold_buy": 500,
+      "gold_sell": 1600,
+      "silver_buy": 300,
+      "silver_sell": 1200,
+      "breakeven_gold": 527,
+      "roi_gold_pct": 204,
+      "strategy": "El Dérbi de Lisboa. Cupo de liga secundaria perfecto para EA. Platas y oros comunes portugueses escasean rápido en el mercado."
+    }
+  ]
+}

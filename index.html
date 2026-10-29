@@ -170,7 +170,7 @@
                 <div>
                     <h1 class="text-xl font-extrabold text-white flex items-center gap-2 tracking-tight">
                         FC 27 TRADING DESK PRO
-                        <span class="bg-brand-emerald/20 text-brand-emerald text-xs font-mono font-bold px-2 py-0.5 rounded border border-brand-emerald/30 animate-pulse">LIVE FUTBIN/FUTGG SYNC</span>
+                        <span class="bg-brand-emerald/20 text-brand-emerald text-xs font-mono font-bold px-2 py-0.5 rounded border border-brand-emerald/30 animate-pulse" data-sync-badge>LIVE FUTBIN/FUTGG SYNC</span>
                     </h1>
                     <p class="text-xs text-slate-400">Terminal Profesional para 2 Operadores • Alertas Diarias • Manual + Datos Reales</p>
                 </div>
@@ -801,7 +801,68 @@
             </div>
         </section>
 
-        <!-- SECTION 7: DEEP-DIVE MANUAL PANELS (SBC STORAGE, BPM, SNIPING) -->
+        <!-- SECTION 7: MARQUESINAS SEMANALES PREDICTOR (POWERED BY GEMINI + GOOGLE SEARCH) -->
+        <section class="space-y-4" id="marquesinaSection">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-l-4 border-brand-purple pl-4">
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                        🏆 Predictor de Marquesinas Semanales (Jueves 19:00 CET)
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-400">Partidos predichos por IA con búsqueda web en vivo. Compra el martes de madrugada, vende el jueves a las 19:15 CET.</p>
+                </div>
+                <div class="flex items-center gap-2 text-xs">
+                    <span class="bg-brand-purple/20 text-brand-purple font-mono px-2 py-0.5 rounded border border-brand-purple/30 font-bold text-[10px]">⚡ AUTO-GENERADO POR GEMINI + GOOGLE SEARCH</span>
+                    <button onclick="copyMarquesinasAlert()" class="bg-brand-indigo/30 hover:bg-brand-indigo/50 text-brand-cyan font-bold px-3 py-1.5 rounded-lg border border-brand-indigo/40 transition flex items-center gap-1.5 text-xs font-mono">
+                        📋 Copiar para WhatsApp
+                    </button>
+                </div>
+            </div>
+
+            <!-- MARQUESINAS LAST UPDATE & STATUS -->
+            <div class="bg-brand-card/60 p-3 rounded-xl border border-brand-border flex flex-wrap items-center justify-between gap-3 text-xs">
+                <div class="flex items-center gap-2 font-mono text-[11px]">
+                    <span class="w-2 h-2 rounded-full bg-brand-purple animate-pulse"></span>
+                    <span class="text-slate-400">Última predicción:</span>
+                    <strong id="marquesinaLastUpdate" class="text-white">Cargando...</strong>
+                    <span class="text-slate-600">|</span>
+                    <span class="text-slate-400">Semana:</span>
+                    <strong id="marquesinaWeek" class="text-brand-purple">--</strong>
+                </div>
+                <span class="text-[10px] text-slate-500 font-mono">Se actualiza automáticamente cada martes a las 02:30 CET vía GitHub Actions</span>
+            </div>
+
+            <!-- MARQUESINAS MATCH CARDS GRID -->
+            <div id="marquesinaGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Placeholder while loading -->
+                <div class="col-span-full p-8 text-center text-slate-500 text-xs font-mono" id="marquesinaPlaceholder">
+                    ⏳ Esperando la primera predicción semanal de Marquesinas...
+                    <br>Se generará automáticamente el próximo martes o puedes ejecutar el workflow manualmente en GitHub.
+                </div>
+            </div>
+
+            <!-- MARQUESINAS PROTOCOL EXPLAINER -->
+            <div class="bg-brand-bg/70 p-4 rounded-xl border border-brand-border/60 text-xs text-slate-300 leading-relaxed space-y-2">
+                <div class="flex items-center gap-2 font-bold text-white text-sm">
+                    📖 Protocolo de Operación Marquesinas (Manual FC 27)
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-[11px]">
+                    <div class="space-y-1">
+                        <span class="text-brand-emerald font-bold block">FASE 1 — COMPRA (Mar 02:00 - Jue 08:00)</span>
+                        <p class="text-slate-400 font-sans">Puja masiva en subasta sobre oros y platas de los 8 clubes predichos. Precio objetivo: oros 600-700m, platas 250-500m.</p>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-brand-amber font-bold block">FASE 2 — ESPERA (Jue 08:00 - 19:00)</span>
+                        <p class="text-slate-400 font-sans">Mantener inventario y no vender. A las 18:55 CET listar las cartas en la lista de transferencias a precios de techo.</p>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-brand-rose font-bold block">FASE 3 — VENTA (Jue 19:05 - 21:00)</span>
+                        <p class="text-slate-400 font-sans">Venta inmediata a las 19:15 CET en los primeros 90 minutos de la Marquesina. Oros a 1.200-2.500m, platas a 800-1.800m.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: DEEP-DIVE MANUAL PANELS (SBC STORAGE, BPM, SNIPING) -->
         <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- SBC STORAGE & HOLOGRAPHICS -->
             <div class="bg-brand-card rounded-2xl p-5 border border-brand-border shadow-xl space-y-3">
@@ -1589,16 +1650,210 @@ _Generado desde FC 27 Trading Desk Pro_`;
             }
         }
 
-        // Try loading prices.json from local file if available
-        fetch('prices.json').then(r => r.json()).then(data => {
-            if (data && data.items && Array.isArray(data.items)) {
-                catalogItems = data.items;
-                renderCatalog();
-                console.log("Precios cargados desde prices.json");
+        // =========================================================================
+        // LIVE PRICE SYNC ENGINE (Vercel Serverless /api/prices → FUT.GG)
+        // Falls back to static prices.json if the API is unavailable.
+        // Polls every 5 minutes. Updates catalog cards + semáforos in real time.
+        // =========================================================================
+        let lastSyncTime = null;
+        let liveSyncActive = false;
+
+        async function syncLivePrices() {
+            try {
+                const res = await fetch('/api/prices');
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const json = await res.json();
+
+                if (json.status === 'ok' && Array.isArray(json.data)) {
+                    // Map live prices into catalog items
+                    json.data.forEach(live => {
+                        const match = catalogItems.find(c =>
+                            c.name.toLowerCase().includes(live.name.split(' ').pop().toLowerCase()) &&
+                            c.category === live.category
+                        );
+                        if (match && live.price > 0) {
+                            match.current_price = live.price;
+                            match._liveBreakEven = live.breakEven;
+                            match._liveTarget10 = live.target10ROI;
+                            match._liveSync = true;
+                        }
+                    });
+
+                    lastSyncTime = new Date();
+                    liveSyncActive = true;
+                    renderCatalog();
+                    updateSyncBadge();
+                    console.log(`[LIVE SYNC] Precios actualizados desde FUT.GG a las ${lastSyncTime.toLocaleTimeString('es-ES')}`);
+                }
+            } catch (err) {
+                console.log('[LIVE SYNC] API no disponible, usando datos locales:', err.message);
+                // On first load, fall back to static prices.json
+                if (!lastSyncTime) {
+                    loadStaticPrices();
+                }
             }
-        }).catch(() => {
-            console.log("Usando base de datos interna de precios");
-        });
+        }
+
+        function loadStaticPrices() {
+            fetch('prices.json').then(r => r.json()).then(data => {
+                if (data && data.items && Array.isArray(data.items)) {
+                    catalogItems = data.items;
+                    renderCatalog();
+                    console.log("Precios cargados desde prices.json (estático)");
+                }
+            }).catch(() => {
+                console.log("Usando base de datos interna de precios");
+            });
+        }
+
+        function updateSyncBadge() {
+            const badge = document.querySelector('[data-sync-badge]');
+            if (badge && lastSyncTime) {
+                badge.innerText = `LIVE SYNC ${lastSyncTime.toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit'})}`;
+                badge.className = badge.className.replace('animate-pulse', '');
+                setTimeout(() => { badge.classList.add('animate-pulse'); }, 100);
+            }
+        }
+
+        // Initial sync attempt + polling every 5 min
+        syncLivePrices();
+        setInterval(syncLivePrices, 5 * 60 * 1000);
+
+        // =========================================================================
+        // MARQUESINAS WEEKLY PREDICTOR LOADER (reads /data/marquesinas.json)
+        // Generated automatically every Tuesday by GitHub Actions + Gemini API.
+        // =========================================================================
+        async function loadMarquesinas() {
+            try {
+                // Try Vercel / GitHub Pages path
+                let res = await fetch('/data/marquesinas.json');
+                if (!res.ok) {
+                    // Try alternative path used during GitHub Pages deploy
+                    res = await fetch('public/data/marquesinas.json');
+                }
+                if (!res.ok) throw new Error('No marquesinas data yet');
+
+                const data = await res.json();
+                renderMarquesinas(data);
+            } catch (err) {
+                console.log('[MARQUESINAS] Datos no disponibles todavía:', err.message);
+            }
+        }
+
+        function renderMarquesinas(data) {
+            const grid = document.getElementById('marquesinaGrid');
+            const placeholder = document.getElementById('marquesinaPlaceholder');
+            const lastUpdate = document.getElementById('marquesinaLastUpdate');
+            const weekLabel = document.getElementById('marquesinaWeek');
+
+            if (!data || !data.predictions || !data.predictions.length) return;
+
+            // Update metadata
+            if (lastUpdate) lastUpdate.innerText = data.generatedAt ? new Date(data.generatedAt).toLocaleString('es-ES') : 'Reciente';
+            if (weekLabel) weekLabel.innerText = data.week || '--';
+
+            // Remove placeholder
+            if (placeholder) placeholder.remove();
+
+            // Clear and render match cards
+            grid.innerHTML = '';
+
+            data.predictions.forEach((match, idx) => {
+                const certStyle = getCertaintyStyle(
+                    match.certainty === 'green' ? 'green' :
+                    match.certainty === 'blue' ? 'blue' : 'yellow'
+                );
+
+                const netGold = Math.round((match.gold_sell * 0.95) - match.gold_buy);
+                const roiGold = match.gold_buy > 0 ? (((match.gold_sell * 0.95 - match.gold_buy) / match.gold_buy) * 100).toFixed(0) : 0;
+                const netSilver = Math.round((match.silver_sell * 0.95) - match.silver_buy);
+
+                const card = document.createElement('div');
+                card.className = 'bg-brand-card rounded-2xl p-4 border border-brand-border shadow-xl hover:border-brand-purple/60 transition space-y-3';
+
+                card.innerHTML = `
+                    <div class="flex items-start justify-between gap-2">
+                        <div>
+                            <span class="text-[10px] font-mono text-brand-purple uppercase font-bold tracking-wider">PARTIDO ${idx + 1} • ${match.league}</span>
+                            <h4 class="text-sm font-extrabold text-white mt-0.5">${match.home} vs ${match.away}</h4>
+                        </div>
+                        <span class="text-[9px] font-bold font-mono px-2 py-0.5 rounded border whitespace-nowrap ${certStyle}">
+                            ${match.certainty_label || '🟡 HIPÓTESIS'}
+                        </span>
+                    </div>
+
+                    <div class="bg-brand-bg/80 p-2.5 rounded-xl border border-brand-border/60 font-mono text-xs space-y-1.5">
+                        <div class="text-[10px] text-slate-400 font-bold uppercase border-b border-brand-border/40 pb-1">Oros Comunes / Únicos</div>
+                        <div class="flex justify-between text-slate-400 text-[11px]">
+                            <span>Compra (Martes subasta):</span>
+                            <strong class="text-brand-emerald">${(match.gold_buy || 650).toLocaleString()} m</strong>
+                        </div>
+                        <div class="flex justify-between text-slate-400 text-[11px]">
+                            <span>Venta (Jue 19:15 CET):</span>
+                            <strong class="text-brand-cyan">${(match.gold_sell || 1800).toLocaleString()} m</strong>
+                        </div>
+                        <div class="flex justify-between text-[11px] pt-1 border-t border-brand-border/40">
+                            <span class="text-slate-300">Neto Post-Tax:</span>
+                            <strong class="text-brand-emerald font-black">+${netGold.toLocaleString()} m (+${roiGold}%)</strong>
+                        </div>
+                    </div>
+
+                    <div class="bg-brand-bg/80 p-2 rounded-xl border border-brand-border/60 font-mono text-[11px] space-y-1">
+                        <div class="text-[10px] text-slate-400 font-bold uppercase">Platas</div>
+                        <div class="flex justify-between text-slate-400">
+                            <span>Compra → Venta:</span>
+                            <span><strong class="text-brand-emerald">${(match.silver_buy || 350).toLocaleString()}</strong> → <strong class="text-brand-cyan">${(match.silver_sell || 1200).toLocaleString()}</strong> m</span>
+                        </div>
+                        <div class="flex justify-between text-slate-400">
+                            <span>Neto:</span>
+                            <strong class="text-brand-emerald">+${netSilver.toLocaleString()} m</strong>
+                        </div>
+                    </div>
+
+                    ${match.strategy ? `<p class="text-[11px] text-slate-400 leading-snug">${match.strategy}</p>` : ''}
+                `;
+
+                grid.appendChild(card);
+            });
+
+            // Store for WhatsApp copy
+            window._marquesinaData = data;
+        }
+
+        function copyMarquesinasAlert() {
+            const data = window._marquesinaData;
+            if (!data || !data.predictions) {
+                showToast('No hay predicción de Marquesinas disponible todavía');
+                return;
+            }
+
+            let msg = `🏆 *PREDICCIÓN MARQUESINAS FC 27 — ${data.week || 'Esta Semana'}*\n`;
+            msg += `━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+            msg += `📅 Generado: ${data.generatedAt ? new Date(data.generatedAt).toLocaleString('es-ES') : 'Reciente'}\n\n`;
+
+            data.predictions.forEach((m, i) => {
+                msg += `⚽ *PARTIDO ${i + 1}: ${m.home} vs ${m.away}*\n`;
+                msg += `🏟️ Liga: ${m.league}\n`;
+                msg += `🔖 Certeza: ${m.certainty_label}\n`;
+                msg += `🟢 Comprar: Oros a ${m.gold_buy}m / Platas a ${m.silver_buy}m\n`;
+                msg += `🔵 Vender (Jue 19:15): Oros a ${m.gold_sell}m / Platas a ${m.silver_sell}m\n`;
+                if (m.strategy) msg += `💡 ${m.strategy}\n`;
+                msg += `\n`;
+            });
+
+            msg += `⚠️ *Break-Even EA Tax: +5.263% limpio.*\n`;
+            msg += `━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+            msg += `_FC 27 Trading Desk Pro — Marquesinas AI_`;
+
+            navigator.clipboard.writeText(msg).then(() => {
+                showToast('✅ Predicción de Marquesinas copiada para WhatsApp / Telegram');
+            }).catch(() => {
+                prompt('Copia este mensaje:', msg);
+            });
+        }
+
+        // Load marquesinas on page open
+        loadMarquesinas();
 
         // =========================================================================
         // 6. SHARED PORTFOLIO & BUDGET ALLOCATOR (TÚ Y TU AMIGO)

@@ -2,5 +2,16 @@
   "version": 2,
   "name": "fc27-trading-desk",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/data/:path*", "destination": "/public/data/:path*" }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "s-maxage=300, stale-while-revalidate=60" }
+      ]
+    }
+  ]
 }

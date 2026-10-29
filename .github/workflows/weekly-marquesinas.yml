@@ -1,0 +1,40 @@
+name: "📊 Predicción Semanal Marquesinas"
+
+on:
+  schedule:
+    # Cada martes a las 01:30 UTC (02:30 CET) — ventana óptima de pujas masivas
+    - cron: "30 1 * * 2"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  predict:
+    name: "Generar predicciones Marquesinas"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias
+        run: npm install @google/genai
+
+      - name: Ejecutar predicción
+        run: node scripts/predict-marquesinas.mjs
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Commit y push resultados
+        run: |
+          git config user.name "FC27 Trading Bot"
+          git config user.email "bot@tradingdesk.local"
+          git add -A
+          git commit -m "chore: actualización automática Marquesinas semanales" || exit 0
+          git push
