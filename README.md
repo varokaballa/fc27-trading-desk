@@ -84,7 +84,34 @@ Para no confundir nunca una norma oficial del juego con una simple hipótesis de
 
 ---
 
-### 7. 🐍 Script Complementario en Python (`sync_prices.py`)
+### 7. 🤖 Predictor de Marquesinas con IA (Gemini 2.5 Flash + Google Search)
+- **Automatizado con GitHub Actions:** Se ejecuta cada martes a las 02:30 CET (justo cuando empieza la ventana de pujas masivas).
+- **Investigación en Vivo:** Gemini busca en internet el calendario real del fin de semana y las Marquesinas de la semana pasada, seleccionando 4 partidos de 4 ligas distintas.
+- **Salida Directa:** Genera `public/data/marquesinas.json` con precios recomendados de compra (oros a 600-700m, platas a 250-500m) y venta para el jueves a las 19:15 CET.
+- **Botón `📋 Copiar para WhatsApp`:** Formatea las 4 predicciones con sus precios y estrategias para enviárselo a tu amigo.
+
+### 8. ⚡ Sincronización de Precios en Vivo (Vercel Serverless Function)
+- **Endpoint `/api/prices`:** Consulta en segundo plano los precios de FUT.GG con cabeceras de navegador.
+- **Caché en el Edge (5 min):** No satura servidores ni agota límites; la web consulta `/api/prices` cada 5 minutos y actualiza los precios y Break-Evens en directo.
+- **Respaldo inteligente:** Si el endpoint no estuviera disponible, la web continúa funcionando con los datos locales sin romperse.
+
+---
+
+## 🔑 Configuración del Predictor Automático (1 minuto)
+
+Para que el robot semanal de GitHub Actions pueda consultar a Gemini:
+
+1. Entra en [**aistudio.google.com**](https://aistudio.google.com/) y pulsa en **"Get API key"** (es 100% gratuita).
+2. Ve a tu repositorio en GitHub: [**github.com/varokaballa/fc27-trading-desk**](https://github.com/varokaballa/fc27-trading-desk).
+3. Entra en **Settings** > **Secrets and variables** > **Actions**.
+4. Haz clic en **New repository secret**:
+   - **Name:** `GEMINI_API_KEY`
+   - **Secret:** *(Pega tu clave de API)*
+5. Pulsa en **Add secret**. ¡Listo! A partir de ese momento, todos los martes se actualizará solo, o puedes ir a la pestaña **Actions** en GitHub y ejecutarlo manualmente cuando quieras dándole a **Run workflow**.
+
+---
+
+### 9. 🐍 Script Complementario en Python (`sync_prices.py`)
 Si deseas ver una tabla rápida de resumen en la consola o actualizar `prices.json` mediante scripts:
 ```bash
 python sync_prices.py
