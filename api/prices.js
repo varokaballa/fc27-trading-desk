@@ -2,11 +2,18 @@
 // Cache-Control: 5-min edge cache with 60s stale-while-revalidate
 
 const PLAYERS = [
-  { eaId: 231747, name: "K. Mbappé", rating: 91, position: "ST", category: "meta" },
-  { eaId: 252371, name: "Vinícius Jr.", rating: 90, position: "LW", category: "meta" },
-  { eaId: 241928, name: "W. Saliba", rating: 87, position: "CB", category: "meta" },
-  { eaId: 253293, name: "F. Valverde", rating: 88, position: "CM", category: "meta" },
-  { eaId: 239682, name: "Theo Hernández", rating: 87, position: "LB", category: "meta" },
+  { eaId: 231747, name: "K. Mbappé", rating: 91, position: "ST", category: "meta", benchmark: 3280000 },
+  { eaId: 252371, name: "Vinícius Jr.", rating: 90, position: "LW", category: "meta", benchmark: 890000 },
+  { eaId: 252371, name: "Jude Bellingham", rating: 90, position: "CAM", category: "meta", benchmark: 480000 },
+  { eaId: 203376, name: "Virgil van Dijk", rating: 89, position: "CB", category: "meta", benchmark: 320000 },
+  { eaId: 253293, name: "F. Valverde", rating: 88, position: "CM", category: "meta", benchmark: 290000 },
+  { eaId: 239085, name: "Erling Haaland", rating: 91, position: "ST", category: "meta", benchmark: 180000 },
+  { eaId: 271295, name: "Lamine Yamal", rating: 86, position: "RW", category: "meta", benchmark: 165000 },
+  { eaId: 241928, name: "W. Saliba", rating: 87, position: "CB", category: "meta", benchmark: 145000 },
+  { eaId: 239682, name: "Theo Hernández", rating: 87, position: "LB", category: "meta", benchmark: 120000 },
+  { eaId: 243715, name: "Cole Palmer", rating: 85, position: "CAM", category: "meta", benchmark: 85000 },
+  { eaId: 257534, name: "Nico Williams", rating: 85, position: "LM", category: "meta", benchmark: 55000 },
+  { eaId: 231866, name: "Rodri", rating: 91, position: "CDM", category: "meta", benchmark: 42000 },
 ];
 
 const USER_AGENT =
@@ -23,23 +30,18 @@ async function fetchPlayerPrice(eaId) {
 
     const json = await resp.json();
 
-    // FUT.GG typically nests the price under a platform key (e.g. "ps", "xbox", or a
-    // combined console key). Walk the response to find the first numeric price value.
     if (json && typeof json === "object") {
-      // Try common shapes: json.price, json.data.price, or first platform object
-      if (typeof json.price === "number") return json.price;
+      if (typeof json.price === "number" && json.price > 0) return json.price;
 
       const data = json.data ?? json;
-      if (typeof data.price === "number") return data.price;
+      if (typeof data.price === "number" && data.price > 0) return data.price;
 
-      // Iterate platform keys and grab the first LCPrice / price we find
       for (const key of Object.keys(data)) {
         const entry = data[key];
         if (entry && typeof entry === "object") {
           const p = entry.LCPrice ?? entry.lcPrice ?? entry.price ?? entry.Price;
           if (typeof p === "number" && p > 0) return p;
 
-          // One more level deep (some responses nest prices inside an array)
           if (Array.isArray(entry.prices) && entry.prices.length) {
             const latest = entry.prices[entry.prices.length - 1];
             const lp = latest?.LCPrice ?? latest?.lcPrice ?? latest?.price;
@@ -61,9 +63,10 @@ export default async function handler(req, res) {
 
   const results = await Promise.all(
     PLAYERS.map(async (player) => {
-      const price = await fetchPlayerPrice(player.eaId);
-      const breakEven = price > 0 ? Math.ceil(price / 0.95) : 0;
-      const target10ROI = price > 0 ? Math.ceil((price * 1.1) / 0.95) : 0;
+      const scrapedPrice = await fetchPlayerPrice(player.eaId);
+      const price = scrapedPrice > 0 ? scrapedPrice : player.benchmark;
+      const breakEven = Math.ceil(price / 0.95);
+      const target10ROI = Math.ceil((price * 1.1) / 0.95);
 
       return {
         eaId: player.eaId,
@@ -74,6 +77,7 @@ export default async function handler(req, res) {
         price,
         breakEven,
         target10ROI,
+        liveScraped: scrapedPrice > 0,
       };
     })
   );
@@ -83,4 +87,4 @@ export default async function handler(req, res) {
     updatedAt: new Date().toISOString(),
     data: results,
   });
-};
+}

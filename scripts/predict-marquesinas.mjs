@@ -92,20 +92,20 @@ async function main() {
     console.log(`📅 Fecha: ${isoDate}\n`);
 
     let text = null;
+    let usedSearch = false;
     const attempts = [
+      { model: "gemini-2.5-flash", search: true },
       { model: "gemini-2.0-flash", search: true },
-      { model: "gemini-2.0-flash", search: false },
-      { model: "gemini-1.5-flash", search: false },
-      { model: "gemini-3.8-flash", search: false }
+      { model: "gemini-1.5-flash", search: true }
     ];
 
     for (const att of attempts) {
       try {
         console.log(`🔄 Intentando generar con ${att.model} (Google Search: ${att.search})...`);
-        const config = { responseMimeType: "application/json" };
-        if (att.search) {
-          config.tools = [{ googleSearch: {} }];
-        }
+        const config = { 
+          responseMimeType: "application/json",
+          tools: [{ googleSearch: {} }]
+        };
         const response = await ai.models.generateContent({
           model: att.model,
           contents: [{ role: "user", parts: [{ text: prompt }] }],
@@ -113,16 +113,17 @@ async function main() {
         });
         if (response && response.text) {
           text = response.text;
-          console.log(`✅ Respuesta obtenida con ${att.model}`);
+          usedSearch = true;
+          console.log(`✅ Predicción en vivo con Google Search obtenida usando ${att.model}`);
           break;
         }
       } catch (err) {
-        console.warn(`⚠️ No disponible con ${att.model}: ${err.message}`);
+        console.warn(`⚠️ No disponible con ${att.model} (con Search): ${err.message}`);
       }
     }
 
     if (!text) {
-      console.warn("⚠️ Ningún modelo respondió a tiempo. Manteniendo datos de Marquesinas existentes.");
+      console.warn("⚠️ Búsqueda web no disponible o cuota agotada. Manteniendo predicciones auténticas existentes en data/marquesinas.json sin sobreescribir con datos no verificados.");
       process.exit(0);
     }
 
