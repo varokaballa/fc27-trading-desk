@@ -3,17 +3,19 @@
 
 const PLAYERS = [
   { eaId: 231747, name: "K. Mbappé", rating: 91, position: "ST", category: "meta", benchmark: 3280000 },
-  { eaId: 252371, name: "Vinícius Jr.", rating: 90, position: "LW", category: "meta", benchmark: 890000 },
-  { eaId: 252371, name: "Jude Bellingham", rating: 90, position: "CAM", category: "meta", benchmark: 480000 },
+  { eaId: 227203, name: "Alexia Putellas", rating: 90, position: "CM", category: "meta", benchmark: 920000 },
+  { eaId: 238794, name: "Vinícius Jr.", rating: 90, position: "LW", category: "meta", benchmark: 890000 },
   { eaId: 203376, name: "Virgil van Dijk", rating: 89, position: "CB", category: "meta", benchmark: 320000 },
   { eaId: 253293, name: "F. Valverde", rating: 88, position: "CM", category: "meta", benchmark: 290000 },
+  { eaId: 241667, name: "Aitana Bonmatí", rating: 91, position: "CM", category: "meta", benchmark: 285000 },
+  { eaId: 227102, name: "C. Graham Hansen", rating: 90, position: "RW", category: "meta", benchmark: 240000 },
   { eaId: 239085, name: "Erling Haaland", rating: 91, position: "ST", category: "meta", benchmark: 180000 },
   { eaId: 271295, name: "Lamine Yamal", rating: 86, position: "RW", category: "meta", benchmark: 165000 },
+  { eaId: 256790, name: "Jude Bellingham", rating: 90, position: "CAM", category: "meta", benchmark: 155000 },
   { eaId: 241928, name: "W. Saliba", rating: 87, position: "CB", category: "meta", benchmark: 145000 },
   { eaId: 239682, name: "Theo Hernández", rating: 87, position: "LB", category: "meta", benchmark: 120000 },
-  { eaId: 243715, name: "Cole Palmer", rating: 85, position: "CAM", category: "meta", benchmark: 85000 },
-  { eaId: 257534, name: "Nico Williams", rating: 85, position: "LM", category: "meta", benchmark: 55000 },
-  { eaId: 231866, name: "Rodri", rating: 91, position: "CDM", category: "meta", benchmark: 42000 },
+  { eaId: 243812, name: "Rodrygo", rating: 86, position: "RW", category: "meta", benchmark: 110000 },
+  { eaId: 228618, name: "Ferland Mendy", rating: 84, position: "LB", category: "meta", benchmark: 95000 },
 ];
 
 const USER_AGENT =

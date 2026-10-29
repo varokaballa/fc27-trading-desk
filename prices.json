@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-29T10:35:00+01:00",
-  "source": "FUTBIN Benchmark Feed — FC 27 Market",
+  "updated_at": "2026-10-29T10:55:00+01:00",
+  "source": "FUTBIN & FUT.GG Meta Intelligence Feed — FC 27 Market",
   "items": [
     {
       "id": "mbappe-91",
@@ -17,7 +17,24 @@
       "best_sell_days": [4, 5],
       "futbin_url": "https://www.futbin.com/players?page=1&search=mbappe",
       "futgg_url": "https://www.fut.gg/players/?search=mbappe",
-      "strategy_note": "Meta élite absoluto del juego. Comprar en subastas de lunes noche / martes mañana tras el sell-off de Champions. Vender antes de las 18:00 del viernes."
+      "strategy_note": "Rey indiscutible del meta en FUT. 5★ Skills y 97 de ritmo. Comprar en subastas tras el sell-off de Champions; venta el jueves noche o viernes tarde."
+    },
+    {
+      "id": "putellas-90",
+      "name": "Alexia Putellas",
+      "rating": 90,
+      "position": "CM",
+      "category": "meta",
+      "certainty": "red",
+      "certainty_label": "🔴 SEÑAL NO CONFIRMADA",
+      "current_price": 920000,
+      "buy_support": 850000,
+      "sell_target": 990000,
+      "best_buy_days": [1, 2],
+      "best_sell_days": [4, 5],
+      "futbin_url": "https://www.futbin.com/players?page=1&search=putellas",
+      "futgg_url": "https://www.fut.gg/players/?search=putellas",
+      "strategy_note": "5★ Skills / 5★ Pierna Mala. La centrocampista más determinante y cara del juego. Fuerte rebote semanal con recompensas de Rivals."
     },
     {
       "id": "vinicius-90",
@@ -34,24 +51,7 @@
       "best_sell_days": [4, 5],
       "futbin_url": "https://www.futbin.com/players?page=1&search=vinicius",
       "futgg_url": "https://www.fut.gg/players/?search=vinicius",
-      "strategy_note": "Extremo meta de máxima velocidad y regate. Capturar rebote de Rivals (+10-15% neto garantizado si se compra en suelo semanal)."
-    },
-    {
-      "id": "bellingham-90",
-      "name": "Jude Bellingham",
-      "rating": 90,
-      "position": "CAM",
-      "category": "meta",
-      "certainty": "red",
-      "certainty_label": "🔴 SEÑAL NO CONFIRMADA",
-      "current_price": 480000,
-      "buy_support": 440000,
-      "sell_target": 535000,
-      "best_buy_days": [1, 2],
-      "best_sell_days": [4, 5],
-      "futbin_url": "https://www.futbin.com/players?page=1&search=bellingham",
-      "futgg_url": "https://www.fut.gg/players/?search=bellingham",
-      "strategy_note": "Centrocampista total con PlayStyle+ determinante. Fuerte rebote tras las recompensas de Rivals del jueves a las 09:00 CET."
+      "strategy_note": "5★ Skills y máxima aceleración. Demanda masiva para armar plantillas competitivas de Champions. Comprar en mínimo semanal."
     },
     {
       "id": "vandijk-89",
@@ -68,7 +68,7 @@
       "best_sell_days": [4, 5],
       "futbin_url": "https://www.futbin.com/players?page=1&search=van+dijk",
       "futgg_url": "https://www.fut.gg/players/?search=van+dijk",
-      "strategy_note": "El central meta por excelencia. Animaciones defensivas únicas que mantienen su valor muy alto toda la semana."
+      "strategy_note": "El central meta por excelencia de Ultimate Team. Animaciones defensivas únicas que le aseguran un rebote sólido cada jueves tras Rivals."
     },
     {
       "id": "valverde-88",
@@ -85,7 +85,41 @@
       "best_sell_days": [4, 5],
       "futbin_url": "https://www.futbin.com/players?page=1&search=valverde",
       "futgg_url": "https://www.fut.gg/players/?search=valverde",
-      "strategy_note": "Box-to-box top tier. Muy sensible a la liquidez que inyecta Rivals los jueves a las 09:00 CET."
+      "strategy_note": "Box-to-box top tier con 88 de ritmo. Carta titular en la mayoría de plantillas de rango 1. Alta volatilidad y rentabilidad semanal."
+    },
+    {
+      "id": "bonmati-91",
+      "name": "Aitana Bonmatí",
+      "rating": 91,
+      "position": "CM",
+      "category": "meta",
+      "certainty": "red",
+      "certainty_label": "🔴 SEÑAL NO CONFIRMADA",
+      "current_price": 285000,
+      "buy_support": 260000,
+      "sell_target": 315000,
+      "best_buy_days": [1, 2],
+      "best_sell_days": [4, 5],
+      "futbin_url": "https://www.futbin.com/players?page=1&search=bonmati",
+      "futgg_url": "https://www.fut.gg/players/?search=bonmati",
+      "strategy_note": "Balón de Oro con agilidad y pase de élite. Compra obligatoria en sell-off de domingo/lunes y venta escalonada con la apertura de Champions."
+    },
+    {
+      "id": "hansen-90",
+      "name": "C. Graham Hansen",
+      "rating": 90,
+      "position": "RW",
+      "category": "meta",
+      "certainty": "red",
+      "certainty_label": "🔴 SEÑAL NO CONFIRMADA",
+      "current_price": 240000,
+      "buy_support": 215000,
+      "sell_target": 270000,
+      "best_buy_days": [1, 2],
+      "best_sell_days": [4, 5],
+      "futbin_url": "https://www.futbin.com/players?page=1&search=hansen",
+      "futgg_url": "https://www.fut.gg/players/?search=hansen",
+      "strategy_note": "5★ Skills / 5★ Pierna Mala y PlayStyle+ de Regate Hábil. Extremo derecha meta indiscutible en híbridos de LaLiga / Liga F."
     },
     {
       "id": "haaland-91",
@@ -122,6 +156,23 @@
       "strategy_note": "Extremo joven revelación con altísima demanda popular en LaLiga. Rápida revalorización en fines de semana."
     },
     {
+      "id": "bellingham-90",
+      "name": "Jude Bellingham",
+      "rating": 90,
+      "position": "CAM",
+      "category": "meta",
+      "certainty": "red",
+      "certainty_label": "🔴 SEÑAL NO CONFIRMADA",
+      "current_price": 155000,
+      "buy_support": 138000,
+      "sell_target": 175000,
+      "best_buy_days": [1, 2],
+      "best_sell_days": [4, 5],
+      "futbin_url": "https://www.futbin.com/players?page=1&search=bellingham",
+      "futgg_url": "https://www.fut.gg/players/?search=bellingham",
+      "strategy_note": "Centrocampista total con PlayStyle+ determinante. Fuerte rebote tras las recompensas de Rivals del jueves a las 09:00 CET."
+    },
+    {
       "id": "saliba-87",
       "name": "W. Saliba",
       "rating": 87,
@@ -136,7 +187,7 @@
       "best_sell_days": [4, 5],
       "futbin_url": "https://www.futbin.com/players?page=1&search=saliba",
       "futgg_url": "https://www.fut.gg/players/?search=saliba",
-      "strategy_note": "Defensa meta clave en Champions. Liquidación fuerte el domingo noche y subida sólida con Rivals."
+      "strategy_note": "Defensa meta clave de Premier League en Champions. Liquidación fuerte el domingo noche y subida sólida con Rivals."
     },
     {
       "id": "theo-87",
@@ -153,58 +204,41 @@
       "best_sell_days": [4, 5],
       "futbin_url": "https://www.futbin.com/players?page=1&search=theo+hernandez",
       "futgg_url": "https://www.fut.gg/players/?search=theo+hernandez",
-      "strategy_note": "Lateral izquierdo meta con demanda constante. Margen operativo del 12-18% semanal si se compra en subasta."
+      "strategy_note": "Lateral izquierdo meta con velocidad y fuerza física dominantes. Margen operativo del 12-18% semanal si se compra en subasta."
     },
     {
-      "id": "palmer-85",
-      "name": "Cole Palmer",
-      "rating": 85,
-      "position": "CAM",
+      "id": "rodrygo-86",
+      "name": "Rodrygo",
+      "rating": 86,
+      "position": "RW",
       "category": "meta",
       "certainty": "red",
       "certainty_label": "🔴 SEÑAL NO CONFIRMADA",
-      "current_price": 85000,
-      "buy_support": 74000,
-      "sell_target": 98000,
+      "current_price": 110000,
+      "buy_support": 98000,
+      "sell_target": 125000,
       "best_buy_days": [1, 2],
       "best_sell_days": [4, 5],
-      "futbin_url": "https://www.futbin.com/players?page=1&search=cole+palmer",
-      "futgg_url": "https://www.fut.gg/players/?search=cole+palmer",
-      "strategy_note": "Playmaker zurdo meta de la Premier League. Muy buscado por su alta precisión de pase y tiro colocado."
+      "futbin_url": "https://www.futbin.com/players?page=1&search=rodrygo",
+      "futgg_url": "https://www.fut.gg/players/?search=rodrygo",
+      "strategy_note": "Extremo brasileño de máxima agilidad y tiro colocado. Enlace perfecto para Mbappé/Vinícius con demanda continua en Champions."
     },
     {
-      "id": "nico-85",
-      "name": "Nico Williams",
-      "rating": 85,
-      "position": "LM",
+      "id": "mendy-84",
+      "name": "Ferland Mendy",
+      "rating": 84,
+      "position": "LB",
       "category": "meta",
       "certainty": "red",
       "certainty_label": "🔴 SEÑAL NO CONFIRMADA",
-      "current_price": 55000,
-      "buy_support": 46000,
-      "sell_target": 64000,
+      "current_price": 95000,
+      "buy_support": 82000,
+      "sell_target": 110000,
       "best_buy_days": [1, 2],
       "best_sell_days": [4, 5],
-      "futbin_url": "https://www.futbin.com/players?page=1&search=nico+williams",
-      "futgg_url": "https://www.fut.gg/players/?search=nico+williams",
-      "strategy_note": "5 estrellas de pierna mala y velocidad pura. Carta obligatoria para plantillas competitivas de bajo/medio presupuesto."
-    },
-    {
-      "id": "rodri-91",
-      "name": "Rodri",
-      "rating": 91,
-      "position": "CDM",
-      "category": "meta",
-      "certainty": "red",
-      "certainty_label": "🔴 SEÑAL NO CONFIRMADA",
-      "current_price": 42000,
-      "buy_support": 36000,
-      "sell_target": 49000,
-      "best_buy_days": [1, 2],
-      "best_sell_days": [4, 5],
-      "futbin_url": "https://www.futbin.com/players?page=1&search=rodri",
-      "futgg_url": "https://www.fut.gg/players/?search=rodri",
-      "strategy_note": "El Balón de Oro y media 91 más accesible. Sirve tanto de ancla defensiva competitiva como de súper-fodder para SBCs de Icono."
+      "futbin_url": "https://www.futbin.com/players?page=1&search=mendy",
+      "futgg_url": "https://www.fut.gg/players/?search=mendy",
+      "strategy_note": "El lateral izquierdo más mítico y demandado de FUT. Animaciones defensivas y velocidad rota que disparan su precio a pesar de su media 84."
     },
     {
       "id": "fodder-83",
