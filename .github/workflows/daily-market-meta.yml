@@ -1,0 +1,43 @@
+name: "🔥 Explorador Diario de Mercado Meta (19:05 CET)"
+
+on:
+  schedule:
+    # Todos los días a las 18:05 UTC (19:05 CET en Madrid) — 5 min tras el contenido diario de EA
+    - cron: "5 18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scout:
+    name: "Explorar Tendencias, Promos y Héroes (FUTBIN / FUTGG)"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar dependencias
+        run: npm install @google/genai
+
+      - name: Ejecutar Explorador Diario de Mercado
+        run: node scripts/daily-meta-scout.mjs
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Guardar y desplegar catálogo en producción (main y master)
+        run: |
+          git config user.name "FC27 Trading Bot"
+          git config user.email "bot@tradingdesk.local"
+          git add prices.json
+          git commit -m "chore: actualización diaria de mercado y promo activa (19:05 CET) [skip ci]" || exit 0
+          git push origin HEAD:master || true
+          git push origin HEAD:main || true

@@ -359,13 +359,29 @@
                 </button>
             </div>
 
+            <!-- DAILY MARKET TREND BAR (UPDATED AT 19:05 CET) -->
+            <div id="dailyScoutBanner" class="bg-brand-card/70 p-3 rounded-xl border border-brand-border flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+                <div class="flex items-center gap-2.5 text-[11px]">
+                    <span class="w-2 h-2 rounded-full bg-brand-amber animate-pulse"></span>
+                    <span class="text-slate-400">Promo Activa:</span>
+                    <strong id="dailyActivePromo" class="text-brand-amber">Ultimate Scream & FUT Heroes</strong>
+                    <span class="text-slate-600">|</span>
+                    <span id="dailyTrendSummary" class="text-slate-300 font-sans text-xs">Tendencias de FUTBIN & FUT.GG actualizadas diariamente a las 19:05 CET</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] text-slate-500 font-mono">Auto-Sync diario: 19:05 CET</span>
+                    <button onclick="filterCatalog('promo')" class="text-[10px] bg-brand-amber/20 hover:bg-brand-amber/30 text-brand-amber font-bold px-2 py-0.5 rounded border border-brand-amber/30 transition">Ver Tendencias Hoy</button>
+                </div>
+            </div>
+
             <!-- FILTERS TOOLBAR -->
             <div class="bg-brand-card p-3 rounded-xl border border-brand-border flex flex-wrap items-center justify-between gap-3 text-xs">
                 <!-- CATEGORY CHIPS -->
                 <div class="flex flex-wrap items-center gap-1.5">
                     <span class="text-slate-400 font-mono text-[10px] uppercase font-bold mr-1">Categoría:</span>
                     <button onclick="filterCatalog('all')" id="catBtn-all" class="cat-chip px-3 py-1 rounded-lg bg-brand-cyan text-slate-950 font-bold">Todos</button>
-                    <button onclick="filterCatalog('meta')" id="catBtn-meta" class="cat-chip px-3 py-1 rounded-lg bg-brand-bg text-slate-300 hover:text-white border border-brand-border">Meta Élite</button>
+                    <button onclick="filterCatalog('promo')" id="catBtn-promo" class="cat-chip px-3 py-1 rounded-lg bg-brand-bg text-brand-amber hover:text-white border border-brand-border flex items-center gap-1">🔥 Promo & Héroes</button>
+                    <button onclick="filterCatalog('meta')" id="catBtn-meta" class="cat-chip px-3 py-1 rounded-lg bg-brand-bg text-slate-300 hover:text-white border border-brand-border">Meta Oros</button>
                     <button onclick="filterCatalog('fodder')" id="catBtn-fodder" class="cat-chip px-3 py-1 rounded-lg bg-brand-bg text-slate-300 hover:text-white border border-brand-border">Medias SBC</button>
                     <button onclick="filterCatalog('totw')" id="catBtn-totw" class="cat-chip px-3 py-1 rounded-lg bg-brand-bg text-slate-300 hover:text-white border border-brand-border">TOTW Inelástico</button>
                     <button onclick="filterCatalog('sniping')" id="catBtn-sniping" class="cat-chip px-3 py-1 rounded-lg bg-brand-bg text-slate-300 hover:text-white border border-brand-border">Sniping & BPM</button>
@@ -955,6 +971,114 @@
         // 1. DATA DEFINITIONS & DATABASE (FALLBACK + PRICES.JSON SYNC)
         // =========================================================================
         const INITIAL_CATALOG = [
+            {
+                id: "toure-87-hero",
+                name: "Yaya Touré",
+                rating: 87,
+                position: "CDM",
+                category: "hero",
+                version: "FUT Hero",
+                certainty: "green",
+                certainty_label: "🟢 HÉROE META TOP",
+                current_price: 680000,
+                buy_support: 625000,
+                sell_target: 745000,
+                best_buy_days: [1, 2],
+                best_sell_days: [4, 5],
+                futbin_url: "https://www.futbin.com/players?page=1&search=toure",
+                futgg_url: "https://www.fut.gg/players/?search=toure",
+                strategy_note: "Química perfecta de liga y presencia física dominante. Fuerte repunte semanal tras recompensas de Rivals y rearme para Champions."
+            },
+            {
+                id: "ginola-89-hero",
+                name: "David Ginola",
+                rating: 89,
+                position: "LM",
+                category: "hero",
+                version: "FUT Hero",
+                certainty: "green",
+                certainty_label: "🟢 HÉROE META TOP",
+                current_price: 1450000,
+                buy_support: 1350000,
+                sell_target: 1580000,
+                best_buy_days: [1, 2],
+                best_sell_days: [4, 5],
+                futbin_url: "https://www.futbin.com/players?page=1&search=ginola",
+                futgg_url: "https://www.fut.gg/players/?search=ginola",
+                strategy_note: "5★ Skills / 5★ Pierna Mala y animaciones exclusivas. Carta insignia con rango de fluctuación de 100k-150k entre lunes y jueves."
+            },
+            {
+                id: "ramires-86-hero",
+                name: "Ramires",
+                rating: 86,
+                position: "CDM",
+                category: "hero",
+                version: "FUT Hero",
+                certainty: "green",
+                certainty_label: "🟢 HÉROE META TOP",
+                current_price: 490000,
+                buy_support: 445000,
+                sell_target: 540000,
+                best_buy_days: [1, 2],
+                best_sell_days: [4, 5],
+                futbin_url: "https://www.futbin.com/players?page=1&search=ramires",
+                futgg_url: "https://www.fut.gg/players/?search=ramires",
+                strategy_note: "El mediocentro de corte defensivo más rápido de la Premier. Máxima liquidez y absorción instantánea en subastas."
+            },
+            {
+                id: "scream-valverde-89",
+                name: "F. Valverde (Scream)",
+                rating: 89,
+                position: "RW",
+                category: "promo",
+                version: "Ultimate Scream",
+                certainty: "blue",
+                certainty_label: "🔵 PROMO EN VIVO",
+                current_price: 520000,
+                buy_support: 475000,
+                sell_target: 580000,
+                best_buy_days: [2, 3],
+                best_sell_days: [4, 5],
+                futbin_url: "https://www.futbin.com/players?page=1&search=valverde",
+                futgg_url: "https://www.fut.gg/players/?search=valverde",
+                strategy_note: "Cambio de posición a banda con PlayStyle+ de velocidad pura. Capturar sell-off de sobres y vender en el rebote de la noche."
+            },
+            {
+                id: "scream-kounde-87",
+                name: "J. Koundé (Scream)",
+                rating: 87,
+                position: "RB",
+                category: "promo",
+                version: "Ultimate Scream",
+                certainty: "blue",
+                certainty_label: "🔵 PROMO EN VIVO",
+                current_price: 380000,
+                buy_support: 345000,
+                sell_target: 425000,
+                best_buy_days: [2, 3],
+                best_sell_days: [4, 5],
+                futbin_url: "https://www.futbin.com/players?page=1&search=kounde",
+                futgg_url: "https://www.fut.gg/players/?search=kounde",
+                strategy_note: "Lateral derecho defensivo de rango 1 en Champions. Suplanta a cartas de oro convencionales con enlace directo a LaLiga / Francia."
+            },
+            {
+                id: "marchisio-87-hero",
+                name: "Claudio Marchisio",
+                rating: 87,
+                position: "CM",
+                category: "hero",
+                version: "FUT Hero",
+                certainty: "yellow",
+                certainty_label: "🟡 HIPÓTESIS / RADAR",
+                current_price: 310000,
+                buy_support: 280000,
+                sell_target: 345000,
+                best_buy_days: [1, 2],
+                best_sell_days: [4, 5],
+                futbin_url: "https://www.futbin.com/players?page=1&search=marchisio",
+                futgg_url: "https://www.fut.gg/players/?search=marchisio",
+                strategy_note: "Centrocampista 'Gullit Gang' de Serie A con química instantánea de héroe. Margen de flipping de 25k-35k en subastas matutinas."
+            },
             {
                 id: "mbappe-91",
                 name: "K. Mbappé",
@@ -1704,7 +1828,8 @@ _Generado desde FC 27 Trading Desk Pro_`;
             const currentDayIndex = (simulatedDayMode === 'auto') ? cetDate.getDay() : parseInt(simulatedDayMode);
 
             const filtered = catalogItems.filter(item => {
-                const matchesCat = (currentCategoryFilter === 'all' || item.category === currentCategoryFilter);
+                const matchesCat = (currentCategoryFilter === 'all' || 
+                    (currentCategoryFilter === 'promo' ? (item.category === 'promo' || item.category === 'hero') : item.category === currentCategoryFilter));
                 const matchesCert = (currentCertaintyFilter === 'all' || item.certainty === currentCertaintyFilter);
                 const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
                                       String(item.rating).includes(searchQuery) ||
@@ -1723,15 +1848,23 @@ _Generado desde FC 27 Trading Desk Pro_`;
                 const netProfit = Math.round((item.sell_target * 0.95) - item.buy_support);
                 const roi = ((netProfit / item.buy_support) * 100).toFixed(1);
 
+                const isPromo = item.category === 'promo' || item.category === 'hero';
+                const cardBorder = isPromo 
+                    ? 'border-brand-amber/50 hover:border-brand-amber bg-brand-card/90 shadow-brand-amber/10' 
+                    : 'border-brand-border hover:border-brand-cyan/60';
+                const tagColor = isPromo ? 'text-brand-amber' : 'text-brand-cyan';
+                const versionTag = item.version ? `${item.version.toUpperCase()} • ` : '';
+                const categoryLabel = `${versionTag}${item.rating ? item.rating + ' OVR • ' : ''}${item.position}`;
+
                 const card = document.createElement('div');
-                card.className = "bg-brand-card rounded-2xl p-4 border border-brand-border shadow-xl hover:border-brand-cyan/60 transition flex flex-col justify-between space-y-3 relative group";
+                card.className = `bg-brand-card rounded-2xl p-4 border ${cardBorder} shadow-xl transition flex flex-col justify-between space-y-3 relative group`;
 
                 card.innerHTML = `
                     <div class="space-y-2">
                         <!-- HEADER & CERTAINTY -->
                         <div class="flex items-start justify-between gap-2">
                             <div>
-                                <span class="text-[10px] font-mono text-brand-cyan uppercase font-bold tracking-wider">${item.category.toUpperCase()} • ${item.position}</span>
+                                <span class="text-[10px] font-mono ${tagColor} uppercase font-bold tracking-wider">${categoryLabel}</span>
                                 <h4 class="text-sm font-extrabold text-white group-hover:text-brand-cyan transition">${item.name}</h4>
                             </div>
                             <span class="text-[9px] font-bold font-mono px-2 py-0.5 rounded border ${getCertaintyStyle(item.certainty)} whitespace-nowrap">
@@ -1810,7 +1943,13 @@ _Generado desde FC 27 Trading Desk Pro_`;
                 btn.className = "cat-chip px-3 py-1 rounded-lg bg-brand-bg text-slate-300 hover:text-white border border-brand-border";
             });
             const active = document.getElementById('catBtn-' + category);
-            if (active) active.className = "cat-chip px-3 py-1 rounded-lg bg-brand-cyan text-slate-950 font-bold";
+            if (active) {
+                if (category === 'promo') {
+                    active.className = "cat-chip px-3 py-1 rounded-lg bg-brand-amber text-slate-950 font-bold flex items-center gap-1";
+                } else {
+                    active.className = "cat-chip px-3 py-1 rounded-lg bg-brand-cyan text-slate-950 font-bold";
+                }
+            }
             renderCatalog();
         }
 
@@ -1919,6 +2058,14 @@ _Generado desde FC 27 Trading Desk Pro_`;
             fetch('prices.json?t=' + Date.now()).then(r => r.json()).then(data => {
                 if (data && data.items && Array.isArray(data.items)) {
                     catalogItems = data.items;
+                    if (data.active_promo) {
+                        const promoEl = document.getElementById('dailyActivePromo');
+                        if (promoEl) promoEl.textContent = data.active_promo;
+                    }
+                    if (data.daily_trend_summary) {
+                        const trendEl = document.getElementById('dailyTrendSummary');
+                        if (trendEl) trendEl.textContent = data.daily_trend_summary;
+                    }
                     applyCustomOverrides();
                     renderCatalog();
                     console.log("Precios cargados desde prices.json (estático)");
