@@ -365,7 +365,7 @@
                 <div class="flex items-center gap-2.5 text-[11px]">
                     <span class="w-2 h-2 rounded-full bg-brand-amber animate-pulse"></span>
                     <span class="text-slate-400">Promo Activa:</span>
-                    <strong id="dailyActivePromo" class="text-brand-amber">Ultimate Scream & FUT Heroes</strong>
+                    <strong id="dailyActivePromo" class="text-brand-amber">Ultimate Scream, Héroes & Iconos FC 27</strong>
                     <span class="text-slate-600">|</span>
                     <span id="dailyTrendSummary" class="text-slate-300 font-sans text-xs">Tendencias de FUTBIN & FUT.GG actualizadas diariamente a las 19:05 CET</span>
                 </div>
@@ -381,7 +381,7 @@
                 <div class="flex flex-wrap items-center gap-1.5">
                     <span class="text-slate-400 font-mono text-[10px] uppercase font-bold mr-1">Categoría:</span>
                     <button onclick="filterCatalog('all')" id="catBtn-all" class="cat-chip px-3 py-1 rounded-lg bg-brand-cyan text-slate-950 font-bold">Todos</button>
-                    <button onclick="filterCatalog('promo')" id="catBtn-promo" class="cat-chip px-3 py-1 rounded-lg bg-brand-bg text-brand-amber hover:text-white border border-brand-border flex items-center gap-1">🔥 Promo & Héroes</button>
+                    <button onclick="filterCatalog('promo')" id="catBtn-promo" class="cat-chip px-3 py-1 rounded-lg bg-brand-bg text-brand-amber hover:text-white border border-brand-border flex items-center gap-1">🔥 Promo, Héroes & Iconos</button>
                     <button onclick="filterCatalog('meta')" id="catBtn-meta" class="cat-chip px-3 py-1 rounded-lg bg-brand-bg text-slate-300 hover:text-white border border-brand-border">Meta Oros</button>
                     <button onclick="filterCatalog('fodder')" id="catBtn-fodder" class="cat-chip px-3 py-1 rounded-lg bg-brand-bg text-slate-300 hover:text-white border border-brand-border">Medias SBC</button>
                     <button onclick="filterCatalog('totw')" id="catBtn-totw" class="cat-chip px-3 py-1 rounded-lg bg-brand-bg text-slate-300 hover:text-white border border-brand-border">TOTW Inelástico</button>
@@ -973,22 +973,22 @@
         // =========================================================================
         const INITIAL_CATALOG = [
             {
-                id: "toure-87-hero",
+                id: "toure-88-icon",
                 name: "Yaya Touré",
-                rating: 87,
-                position: "CDM",
+                rating: 88,
+                position: "CM",
                 category: "hero",
-                version: "FUT Hero",
+                version: "FUT Icon",
                 certainty: "green",
-                certainty_label: "🟢 HÉROE META TOP",
-                current_price: 680000,
-                buy_support: 625000,
-                sell_target: 745000,
+                certainty_label: "🟢 ICONO META TOP",
+                current_price: 780000,
+                buy_support: 715000,
+                sell_target: 860000,
                 best_buy_days: [1, 2],
                 best_sell_days: [4, 5],
-                futbin_url: "https://www.futbin.com/players?page=1&search=toure",
-                futgg_url: "https://www.fut.gg/players/?search=toure",
-                strategy_note: "Química perfecta de liga y presencia física dominante. Fuerte repunte semanal tras recompensas de Rivals y rearme para Champions."
+                futbin_url: "https://www.futbin.com/27/players?search=toure",
+                futgg_url: "https://www.fut.gg/27/players/?search=toure",
+                strategy_note: "Ascendido a ICONO oficial en FC 27. Otorga +1 de química a todas las ligas del juego y despliegue físico colosal. Fuerte demanda semanal para Champions."
             },
             {
                 id: "ginola-89-hero",
@@ -1004,9 +1004,27 @@
                 sell_target: 1580000,
                 best_buy_days: [1, 2],
                 best_sell_days: [4, 5],
-                futbin_url: "https://www.futbin.com/players?page=1&search=ginola",
-                futgg_url: "https://www.fut.gg/players/?search=ginola",
-                strategy_note: "5★ Skills / 5★ Pierna Mala y animaciones exclusivas. Carta insignia con rango de fluctuación de 100k-150k entre lunes y jueves."
+                futbin_url: "https://www.futbin.com/27/players?search=ginola",
+                futgg_url: "https://www.fut.gg/27/players/?search=ginola",
+                strategy_note: "5★ Skills / 5★ Pierna Mala y tipo de cuerpo único en FC 27. Carta insignia de torneos competitivos con margen de fluctuación de 100k-150k entre lunes y jueves."
+            },
+            {
+                id: "hazard-88-hero",
+                name: "Eden Hazard",
+                rating: 88,
+                position: "LW",
+                category: "hero",
+                version: "FUT Hero",
+                certainty: "green",
+                certainty_label: "🟢 HÉROE META TOP",
+                current_price: 540000,
+                buy_support: 490000,
+                sell_target: 595000,
+                best_buy_days: [1, 2],
+                best_sell_days: [4, 5],
+                futbin_url: "https://www.futbin.com/27/players?search=hazard",
+                futgg_url: "https://www.fut.gg/27/players/?search=hazard",
+                strategy_note: "Gran fichaje Héroe de FC 27. Regate electrizante, 5★ de filigranas y enlace verde directo con jugadores de la Premier League y Bélgica."
             },
             {
                 id: "ramires-86-hero",
@@ -1022,8 +1040,8 @@
                 sell_target: 540000,
                 best_buy_days: [1, 2],
                 best_sell_days: [4, 5],
-                futbin_url: "https://www.futbin.com/players?page=1&search=ramires",
-                futgg_url: "https://www.fut.gg/players/?search=ramires",
+                futbin_url: "https://www.futbin.com/27/players?search=ramires",
+                futgg_url: "https://www.fut.gg/27/players/?search=ramires",
                 strategy_note: "El mediocentro de corte defensivo más rápido de la Premier. Máxima liquidez y absorción instantánea en subastas."
             },
             {
@@ -1040,8 +1058,8 @@
                 sell_target: 580000,
                 best_buy_days: [2, 3],
                 best_sell_days: [4, 5],
-                futbin_url: "https://www.futbin.com/players?page=1&search=valverde",
-                futgg_url: "https://www.fut.gg/players/?search=valverde",
+                futbin_url: "https://www.futbin.com/27/players?search=valverde",
+                futgg_url: "https://www.fut.gg/27/players/?search=valverde",
                 strategy_note: "Cambio de posición a banda con PlayStyle+ de velocidad pura. Capturar sell-off de sobres y vender en el rebote de la noche."
             },
             {
@@ -1058,8 +1076,8 @@
                 sell_target: 425000,
                 best_buy_days: [2, 3],
                 best_sell_days: [4, 5],
-                futbin_url: "https://www.futbin.com/players?page=1&search=kounde",
-                futgg_url: "https://www.fut.gg/players/?search=kounde",
+                futbin_url: "https://www.futbin.com/27/players?search=kounde",
+                futgg_url: "https://www.fut.gg/27/players/?search=kounde",
                 strategy_note: "Lateral derecho defensivo de rango 1 en Champions. Suplanta a cartas de oro convencionales con enlace directo a LaLiga / Francia."
             },
             {
@@ -1076,8 +1094,8 @@
                 sell_target: 345000,
                 best_buy_days: [1, 2],
                 best_sell_days: [4, 5],
-                futbin_url: "https://www.futbin.com/players?page=1&search=marchisio",
-                futgg_url: "https://www.fut.gg/players/?search=marchisio",
+                futbin_url: "https://www.futbin.com/27/players?search=marchisio",
+                futgg_url: "https://www.fut.gg/27/players/?search=marchisio",
                 strategy_note: "Centrocampista 'Gullit Gang' de Serie A con química instantánea de héroe. Margen de flipping de 25k-35k en subastas matutinas."
             },
             {
@@ -1093,8 +1111,8 @@
                 sell_target: 3220000,
                 best_buy_days: [1, 2], // 1=Mon, 2=Tue
                 best_sell_days: [4, 5], // 4=Thu, 5=Fri
-                futbin_url: "https://www.futbin.com/players?page=1&search=mbappe",
-                futgg_url: "https://www.fut.gg/players/?search=mbappe",
+                futbin_url: "https://www.futbin.com/27/players?search=mbappe",
+                futgg_url: "https://www.fut.gg/27/players/?search=mbappe",
                 strategy_note: "Rey indiscutible del meta en FUT. 5★ Skills y 97 de ritmo. Comprar en subastas tras el sell-off de Champions; venta el jueves noche o viernes tarde."
             },
             {
@@ -1110,8 +1128,8 @@
                 sell_target: 775000,
                 best_buy_days: [1, 2],
                 best_sell_days: [4, 5],
-                futbin_url: "https://www.futbin.com/players?page=1&search=vinicius",
-                futgg_url: "https://www.fut.gg/players/?search=vinicius",
+                futbin_url: "https://www.futbin.com/27/players?search=vinicius",
+                futgg_url: "https://www.fut.gg/27/players/?search=vinicius",
                 strategy_note: "89 OVR y 5★ Skills. Ritmo 93 y regate 91. Comprar en sell-off post-Champions (soporte ~645k) y vender en el rearme del jueves tarde."
             },
             {
@@ -1127,8 +1145,8 @@
                 sell_target: 760000,
                 best_buy_days: [1, 2],
                 best_sell_days: [4, 5],
-                futbin_url: "https://www.futbin.com/players?page=1&search=putellas",
-                futgg_url: "https://www.fut.gg/players/?search=putellas",
+                futbin_url: "https://www.futbin.com/27/players?search=putellas",
+                futgg_url: "https://www.fut.gg/27/players/?search=putellas",
                 strategy_note: "5★ Skills / 5★ Pierna Mala. La centrocampista más determinante del juego. Fuerte rebote semanal con recompensas de Rivals."
             },
             {
@@ -1144,8 +1162,8 @@
                 sell_target: 240000,
                 best_buy_days: [1, 2],
                 best_sell_days: [4, 5],
-                futbin_url: "https://www.futbin.com/players?page=1&search=hansen",
-                futgg_url: "https://www.fut.gg/players/?search=hansen",
+                futbin_url: "https://www.futbin.com/27/players?search=hansen",
+                futgg_url: "https://www.fut.gg/27/players/?search=hansen",
                 strategy_note: "5★ Skills / 5★ Pierna Mala y PlayStyle+ de Regate Hábil. Extremo derecha meta indiscutible en híbridos de LaLiga / Liga F."
             },
             {
@@ -1161,8 +1179,8 @@
                 sell_target: 220000,
                 best_buy_days: [1, 2],
                 best_sell_days: [4, 5],
-                futbin_url: "https://www.futbin.com/players?page=1&search=van+dijk",
-                futgg_url: "https://www.fut.gg/players/?search=van+dijk",
+                futbin_url: "https://www.futbin.com/27/players?search=van+dijk",
+                futgg_url: "https://www.fut.gg/27/players/?search=van+dijk",
                 strategy_note: "El central meta por excelencia de Ultimate Team. Animaciones defensivas únicas que le aseguran un rebote sólido cada jueves tras Rivals."
             },
             {
@@ -1178,8 +1196,8 @@
                 sell_target: 218000,
                 best_buy_days: [1, 2],
                 best_sell_days: [4, 5],
-                futbin_url: "https://www.futbin.com/players?page=1&search=bonmati",
-                futgg_url: "https://www.fut.gg/players/?search=bonmati",
+                futbin_url: "https://www.futbin.com/27/players?search=bonmati",
+                futgg_url: "https://www.fut.gg/27/players/?search=bonmati",
                 strategy_note: "Balón de Oro con agilidad y pase de élite. Compra obligatoria en sell-off de domingo/lunes y venta escalonada con la apertura de Champions."
             },
             {
@@ -1195,8 +1213,8 @@
                 sell_target: 210000,
                 best_buy_days: [1, 2],
                 best_sell_days: [4, 5],
-                futbin_url: "https://www.futbin.com/players?page=1&search=valverde",
-                futgg_url: "https://www.fut.gg/players/?search=valverde",
+                futbin_url: "https://www.futbin.com/27/players?search=valverde",
+                futgg_url: "https://www.fut.gg/27/players/?search=valverde",
                 strategy_note: "Box-to-box top tier con 88 de ritmo. Carta titular en la mayoría de plantillas de rango 1. Alta volatilidad y rentabilidad semanal."
             },
             {
@@ -1212,8 +1230,8 @@
                 sell_target: 155000,
                 best_buy_days: [1, 2],
                 best_sell_days: [4, 5],
-                futbin_url: "https://www.futbin.com/players?page=1&search=bellingham",
-                futgg_url: "https://www.fut.gg/players/?search=bellingham",
+                futbin_url: "https://www.futbin.com/27/players?search=bellingham",
+                futgg_url: "https://www.fut.gg/27/players/?search=bellingham",
                 strategy_note: "Centrocampista total con PlayStyle+ determinante. Fuerte rebote tras las recompensas de Rivals del jueves a las 09:00 CET."
             },
             {
@@ -1229,8 +1247,8 @@
                 sell_target: 150000,
                 best_buy_days: [1, 2],
                 best_sell_days: [4, 5],
-                futbin_url: "https://www.futbin.com/players?page=1&search=haaland",
-                futgg_url: "https://www.fut.gg/players/?search=haaland",
+                futbin_url: "https://www.futbin.com/27/players?search=haaland",
+                futgg_url: "https://www.fut.gg/27/players/?search=haaland",
                 strategy_note: "Delantero tanque meta en remates y centros. Margen amplio de reventa entre martes mañana y jueves tarde."
             },
             {
@@ -1246,8 +1264,8 @@
                 sell_target: 96000,
                 best_buy_days: [1, 2],
                 best_sell_days: [4, 5],
-                futbin_url: "https://www.futbin.com/players?page=1&search=saliba",
-                futgg_url: "https://www.fut.gg/players/?search=saliba",
+                futbin_url: "https://www.futbin.com/27/players?search=saliba",
+                futgg_url: "https://www.fut.gg/27/players/?search=saliba",
                 strategy_note: "Defensa meta clave de Premier League en Champions. Liquidación fuerte el domingo noche y subida sólida con Rivals."
             },
             {
@@ -1263,8 +1281,8 @@
                 sell_target: 88000,
                 best_buy_days: [1, 2],
                 best_sell_days: [4, 5],
-                futbin_url: "https://www.futbin.com/players?page=1&search=lamine+yamal",
-                futgg_url: "https://www.fut.gg/players/?search=lamine+yamal",
+                futbin_url: "https://www.futbin.com/27/players?search=lamine+yamal",
+                futgg_url: "https://www.fut.gg/27/players/?search=lamine+yamal",
                 strategy_note: "Extremo joven revelación con altísima demanda popular en LaLiga. Rápida revalorización en fines de semana."
             },
             {
@@ -1280,8 +1298,8 @@
                 sell_target: 74000,
                 best_buy_days: [1, 2],
                 best_sell_days: [4, 5],
-                futbin_url: "https://www.futbin.com/players?page=1&search=theo+hernandez",
-                futgg_url: "https://www.fut.gg/players/?search=theo+hernandez",
+                futbin_url: "https://www.futbin.com/27/players?search=theo+hernandez",
+                futgg_url: "https://www.fut.gg/27/players/?search=theo+hernandez",
                 strategy_note: "Lateral izquierdo meta con velocidad y fuerza física dominantes. Margen operativo del 12-18% semanal si se compra en subasta."
             },
             {
@@ -1297,8 +1315,8 @@
                 sell_target: 65000,
                 best_buy_days: [1, 2],
                 best_sell_days: [4, 5],
-                futbin_url: "https://www.futbin.com/players?page=1&search=mendy",
-                futgg_url: "https://www.fut.gg/players/?search=mendy",
+                futbin_url: "https://www.futbin.com/27/players?search=mendy",
+                futgg_url: "https://www.fut.gg/27/players/?search=mendy",
                 strategy_note: "El lateral izquierdo más mítico y demandado de FUT. Animaciones defensivas y velocidad rota que disparan su precio a pesar de su media 84."
             },
             {
@@ -1314,8 +1332,8 @@
                 sell_target: 50000,
                 best_buy_days: [1, 2],
                 best_sell_days: [4, 5],
-                futbin_url: "https://www.futbin.com/players?page=1&search=rodrygo",
-                futgg_url: "https://www.fut.gg/players/?search=rodrygo",
+                futbin_url: "https://www.futbin.com/27/players?search=rodrygo",
+                futgg_url: "https://www.fut.gg/27/players/?search=rodrygo",
                 strategy_note: "Extremo brasileño de máxima agilidad y tiro colocado. Enlace perfecto para Mbappé/Vinícius con demanda continua en Champions."
             },
             {
@@ -1331,8 +1349,8 @@
                 sell_target: 1600,
                 best_buy_days: [0, 1], // Sun, Mon
                 best_sell_days: [3, 5],
-                futbin_url: "https://www.futbin.com/fodder/83-rated",
-                futgg_url: "https://www.fut.gg/cheapest-players/83-rated/",
+                futbin_url: "https://www.futbin.com/27/fodder/83-rated",
+                futgg_url: "https://www.fut.gg/27/cheapest-players/83-rated/",
                 strategy_note: "Comprar en 800 - 950 en Squad Battles o lunes sin SBC. Vender en picos de mejoras +83 a 1.400 - 1.800 (+40% a +75% neto)."
             },
             {
@@ -1348,8 +1366,8 @@
                 sell_target: 2800,
                 best_buy_days: [0, 1, 4],
                 best_sell_days: [3, 0],
-                futbin_url: "https://www.futbin.com/fodder/84-rated",
-                futgg_url: "https://www.fut.gg/cheapest-players/84-rated/",
+                futbin_url: "https://www.futbin.com/27/fodder/84-rated",
+                futgg_url: "https://www.fut.gg/27/cheapest-players/84-rated/",
                 strategy_note: "El activo rey de Fodder. Comprar en 1.200 - 1.600 monedas. Techo en SBCs repetibles a 2.500 - 3.200 monedas (+50% a +90% neto)."
             },
             {
@@ -1365,8 +1383,8 @@
                 sell_target: 6500,
                 best_buy_days: [1, 2],
                 best_sell_days: [5, 0],
-                futbin_url: "https://www.futbin.com/fodder/85-rated",
-                futgg_url: "https://www.fut.gg/cheapest-players/85-rated/",
+                futbin_url: "https://www.futbin.com/27/fodder/85-rated",
+                futgg_url: "https://www.fut.gg/27/cheapest-players/85-rated/",
                 strategy_note: "Comprar en 3.000 - 4.000 monedas. Vender en picos de SBC exigentes a 5.500 - 7.000 (+35% a +65% neto)."
             },
             {
@@ -1382,8 +1400,8 @@
                 sell_target: 11800,
                 best_buy_days: [1, 2],
                 best_sell_days: [5, 0],
-                futbin_url: "https://www.futbin.com/fodder/86-rated",
-                futgg_url: "https://www.fut.gg/cheapest-players/86-rated/",
+                futbin_url: "https://www.futbin.com/27/fodder/86-rated",
+                futgg_url: "https://www.fut.gg/27/cheapest-players/86-rated/",
                 strategy_note: "Comprar en 6.500 - 7.500 monedas. Techo en plantillas de Icono a 10.500 - 13.000 (+30% a +60% neto)."
             },
             {
@@ -1399,8 +1417,8 @@
                 sell_target: 17500,
                 best_buy_days: [1, 2],
                 best_sell_days: [5, 0],
-                futbin_url: "https://www.futbin.com/fodder/87-rated",
-                futgg_url: "https://www.fut.gg/cheapest-players/87-rated/",
+                futbin_url: "https://www.futbin.com/27/fodder/87-rated",
+                futgg_url: "https://www.fut.gg/27/cheapest-players/87-rated/",
                 strategy_note: "Comprar en 10.500 - 12.000 monedas. Techo a 16.000 - 20.000 monedas (+25% a +55% neto)."
             },
             {
@@ -1416,8 +1434,8 @@
                 sell_target: 26500,
                 best_buy_days: [1, 2],
                 best_sell_days: [0, 5],
-                futbin_url: "https://www.futbin.com/fodder/88-rated",
-                futgg_url: "https://www.fut.gg/cheapest-players/88-rated/",
+                futbin_url: "https://www.futbin.com/27/fodder/88-rated",
+                futgg_url: "https://www.fut.gg/27/cheapest-players/88-rated/",
                 strategy_note: "Regla oficial FC 27: Los Prístinos (>=88 OVR) otorgan mayor puntuación funcional en Streamlined SBCs al vaciarse el depósito de 100 cartas."
             },
             {
@@ -1450,8 +1468,8 @@
                 sell_target: 1500,
                 best_buy_days: [2, 4], // Tue, Thu morning
                 best_sell_days: [4], // Thu 19:00
-                futbin_url: "https://www.futbin.com/squad-building-challenges/marquess",
-                futgg_url: "https://www.fut.gg/sbc/",
+                futbin_url: "https://www.futbin.com/27/squad-building-challenges/marquess",
+                futgg_url: "https://www.fut.gg/27/sbc/",
                 strategy_note: "Marquesinas salen los jueves a las 19:00 CET. Comprar en subasta el martes o jueves por la mañana con 25-30% de descuento. Vender a las 19:15."
             },
             {
@@ -1467,8 +1485,8 @@
                 sell_target: 1200,
                 best_buy_days: [0, 1, 2, 3, 4, 5, 6],
                 best_sell_days: [4, 5, 6],
-                futbin_url: "https://www.futbin.com/",
-                futgg_url: "https://www.fut.gg/",
+                futbin_url: "https://www.futbin.com/27/",
+                futgg_url: "https://www.fut.gg/27/",
                 strategy_note: "Sobres de 750 monedas. Vender mánagers (Francia, Brasil, Inglaterra) entre 1k y 3k. Bronces de ligas top para Marquesinas. Descartes cubren 150m."
             }
         ];
