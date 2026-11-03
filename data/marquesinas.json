@@ -1,62 +1,62 @@
 {
-  "week": "2026-W44",
-  "generatedAt": "2026-10-29T10:35:00.000Z",
+  "week": "2026-W45",
+  "generatedAt": "2026-11-03T21:00:00.000Z",
   "predictions": [
     {
-      "league": "LaLiga EA Sports",
-      "home": "Athletic Club",
-      "away": "Real Sociedad",
+      "league": "Bundesliga",
+      "home": "1. FC Köln",
+      "away": "Bayer 04 Leverkusen",
       "certainty": "green",
-      "certainty_label": "🟢 CLÁSICO FIJO (DERBI VASCO)",
+      "certainty_label": "🟢 CLÁSICO FIJO (DAS RHEINDERBY)",
       "gold_buy": 650,
       "gold_sell": 2200,
       "silver_buy": 350,
-      "silver_sell": 1400,
+      "silver_sell": 1350,
       "breakeven_gold": 685,
       "roi_gold_pct": 221,
-      "strategy": "El Gran Derbi Vasco en San Mamés. Candidato #1 indiscutible de EA para Marquesinas. Comprar oros comunes españoles de Athletic y Real Sociedad a 600-650 monedas en subasta del martes; venta instantánea el jueves a las 19:15 CET."
+      "strategy": "Das Rheinderby (Derbi del Rin). Una de las rivalidades regionales más ardientes de Alemania. EA siempre recurre a este derbi en Marquesinas. Pujar por oros comunes de Colonia y Leverkusen a 600-650 monedas en subasta del martes; venta instantánea el jueves a las 19:15 CET."
     },
     {
-      "league": "Premier League",
-      "home": "Liverpool",
-      "away": "Arsenal",
+      "league": "Serie A Enilive",
+      "home": "Fiorentina",
+      "away": "Juventus",
       "certainty": "green",
-      "certainty_label": "🟢 CLÁSICO FIJO",
+      "certainty_label": "🟢 CLÁSICO FIJO (RIVALIDAD HISTÓRICA)",
       "gold_buy": 650,
       "gold_sell": 2300,
       "silver_buy": 400,
       "silver_sell": 1500,
       "breakeven_gold": 685,
       "roi_gold_pct": 236,
-      "strategy": "Duelo directo por la cima de la Premier League. Alta demanda de oros ingleses y de posiciones clave (defensas centrales y laterales) de ambos clubes."
+      "strategy": "Enemistad legendaria en el Calcio. Los partidos entre Fiorentina y Juventus tienen un historial altísimo de selección en Marquesinas. Requisito habitual de italianos y jugadores de Serie A. Venta masiva en el pico de salida (19:15 CET)."
     },
     {
-      "league": "Serie A Enilive",
-      "home": "AC Milan",
-      "away": "Inter Milan",
+      "league": "LaLiga EA Sports",
+      "home": "Atlético de Madrid",
+      "away": "FC Barcelona",
       "certainty": "green",
-      "certainty_label": "🟢 DERBY DELLA MADONNINA",
-      "gold_buy": 600,
-      "gold_sell": 2000,
-      "silver_buy": 300,
-      "silver_sell": 1300,
-      "breakeven_gold": 632,
-      "roi_gold_pct": 216,
-      "strategy": "El derbi de Milán en San Siro. Un clásico histórico que EA selecciona siempre. Oros comunes italianos de ambos clubes comprados a descarte (600m) triplican su valor en el pico de salida."
-    },
-    {
-      "league": "Bundesliga",
-      "home": "FC Bayern Munich",
-      "away": "Borussia Dortmund",
-      "certainty": "green",
-      "certainty_label": "🟢 DER KLASSIKER",
+      "certainty_label": "🟢 CLÁSICO FIJO (CHOQUE DE TITANES)",
       "gold_buy": 650,
-      "gold_sell": 2200,
-      "silver_buy": 350,
-      "silver_sell": 1250,
+      "gold_sell": 2400,
+      "silver_buy": 400,
+      "silver_sell": 1600,
       "breakeven_gold": 685,
-      "roi_gold_pct": 221,
-      "strategy": "Der Klassiker alemán. Partidazo de impacto mundial con requisito habitual de jugadores alemanes y de Bundesliga. Comprar a precio de descarte en puja nocturna."
+      "roi_gold_pct": 250,
+      "strategy": "Duelo cumbre en el Metropolitano por el liderato de LaLiga. Alta demanda asegurada de oros de ambos clubes y nacionalidad española. Comprar en puja de madrugada del martes al miércoles y vender con el hype del jueves a las 19:15 CET."
+    },
+    {
+      "league": "Premier League",
+      "home": "Manchester United",
+      "away": "Aston Villa",
+      "certainty": "blue",
+      "certainty_label": "🔵 MUY PROBABLE",
+      "gold_buy": 650,
+      "gold_sell": 2100,
+      "silver_buy": 350,
+      "silver_sell": 1300,
+      "breakeven_gold": 685,
+      "roi_gold_pct": 207,
+      "strategy": "Duelo directo de Premier League en Old Trafford con impacto directo en puestos europeos. Inversión a descarte (600-650m) en oros y platas ingleses con riesgo cero; venta escalonada a la salida del SBC."
     }
   ]
 }

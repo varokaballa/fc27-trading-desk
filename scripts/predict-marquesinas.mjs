@@ -33,33 +33,13 @@ Hoy es ${isoDate} (semana ${currentWeek}).
 
 INSTRUCCIONES PASO A PASO:
 
-1. **BUSCA las Marquesinas del JUEVES PASADO**: Investiga cuáles fueron los 4 partidos de las Marquesinas de la semana pasada. Los 8 clubes que aparecieron la semana pasada NO pueden repetir esta semana (a menos que tengan un derbi/clásico de nivel "Bombazo" o "Clásico Mundial" como El Clásico, Old Firm, Superclásico, etc.).
-
-2. **BUSCA el CALENDARIO REAL de partidos del próximo fin de semana** (viernes a domingo) en:
-   - Top 5 Ligas Europeas: LaLiga, Premier League, Serie A, Bundesliga, Ligue 1
-   - Ligas secundarias: Liga MX, MLS, Eredivisie, Liga Portugal, Scottish Premiership, Superliga Argentina, Brasileirão, Süper Lig, Belgian Pro League, Allsvenskan, etc.
-   
-3. **SELECCIONA 4 PARTIDOS de 4 LIGAS DIFERENTES** que maximicen el beneficio de trading para cartas de oro (golds) y plata (silvers). Prioriza:
-   - Derbis locales y clásicos históricos (máxima demanda)
-   - Rivalidades regionales intensas
-   - Partidos con aficiones grandes y activas en FUT
-   - Variedad geográfica (EA suele mezclar ligas grandes con alguna liga menor)
-   - Patrones históricos de EA (suelen incluir 2 ligas top + 1-2 ligas secundarias)
-
-4. **Para cada partido incluye**:
-   - Liga
-   - Equipo local y visitante
-   - Nivel de certeza:
-     * "green" → 🟢 CLÁSICO FIJO: derbi/clásico de nivel mundial, prácticamente seguro
-     * "blue" → 🔵 MUY PROBABLE: patrón rotacional fuerte, rivalidad conocida
-     * "yellow" → 🟡 ESPECULATIVO: encaja en el patrón pero no es seguro
-   - Precio objetivo de compra para golds: entre 600-700 monedas (puja masiva en madrugada)
-   - Precio objetivo de venta para golds a las 19:15 CET del jueves: entre 1200-2500 monedas
-   - Precio objetivo de compra para silvers: entre 250-500 monedas
-   - Precio objetivo de venta para silvers a las 19:15 CET: entre 800-1800 monedas
-   - Breakeven de golds (precio de compra × 1.05 por el 5% de impuesto EA)
-   - ROI estimado en porcentaje para golds
-   - Nota de estrategia breve explicando por qué este partido y cuándo comprar
+1. **BUSCA las Marquesinas del JUEVES PASADO**: Investiga qué partidos salieron la semana pasada y excluye esos clubes a menos que sea un derbi mundial irrepetible.
+2. **BUSCA el CALENDARIO REAL de partidos del próximo fin de semana** (viernes a domingo) en Top 5 Ligas (Premier, LaLiga, Serie A, Bundesliga, Ligue 1) y ligas secundarias.
+3. **SELECCIONA 4 PARTIDOS de 4 LIGAS DIFERENTES**:
+   - Prioriza derbis locales históricos (Rheinderby, Derbi de Turín/Milán, Clásicos, etc.).
+   - Partidos con gran afición y demanda de cartas de oro común y plata.
+   - Variedad: 3 ligas top y 1 liga secundaria o gran duelo.
+4. **Calcula precios y break-even con la tasa EA (+5.263% en compras de 600-650m)**.
 
 FORMATO DE RESPUESTA (JSON estricto):
 
@@ -77,14 +57,14 @@ FORMATO DE RESPUESTA (JSON estricto):
       "gold_sell": 2200,
       "silver_buy": 400,
       "silver_sell": 1500,
-      "breakeven_gold": 683,
+      "breakeven_gold": 685,
       "roi_gold_pct": 238,
       "strategy": "Explicación breve de la estrategia de compra"
     }
   ]
 }
 
-Devuelve EXACTAMENTE 4 predicciones, cada una de una liga diferente. Sé preciso con los equipos reales y los partidos reales del calendario.`;
+Devuelve EXACTAMENTE 4 predicciones, cada una de una liga diferente.`;
 
 async function main() {
   try {
@@ -92,20 +72,22 @@ async function main() {
     console.log(`📅 Fecha: ${isoDate}\n`);
 
     let text = null;
-    let usedSearch = false;
     const attempts = [
+      { model: "gemini-3.8-flash", search: true },
+      { model: "gemini-3.8-flash", search: false },
+      { model: "gemini-3.8-pro", search: true },
+      { model: "gemini-3.8-pro", search: false },
       { model: "gemini-2.5-flash", search: true },
-      { model: "gemini-2.0-flash", search: true },
-      { model: "gemini-1.5-flash", search: true }
+      { model: "gemini-2.0-flash", search: true }
     ];
 
     for (const att of attempts) {
       try {
         console.log(`🔄 Intentando generar con ${att.model} (Google Search: ${att.search})...`);
-        const config = { 
-          responseMimeType: "application/json",
-          tools: [{ googleSearch: {} }]
-        };
+        const config = { responseMimeType: "application/json" };
+        if (att.search) {
+          config.tools = [{ googleSearch: {} }];
+        }
         const response = await ai.models.generateContent({
           model: att.model,
           contents: [{ role: "user", parts: [{ text: prompt }] }],
@@ -113,39 +95,45 @@ async function main() {
         });
         if (response && response.text) {
           text = response.text;
-          usedSearch = true;
-          console.log(`✅ Predicción en vivo con Google Search obtenida usando ${att.model}`);
+          console.log(`✅ Predicción obtenida exitosamente usando ${att.model} (Search: ${att.search})`);
           break;
         }
       } catch (err) {
-        console.warn(`⚠️ No disponible con ${att.model} (con Search): ${err.message}`);
+        console.warn(`⚠️ No disponible con ${att.model} (Search: ${att.search}): ${err.message}`);
       }
     }
 
+    const dataDir = path.resolve("./data");
+    fs.mkdirSync(dataDir, { recursive: true });
+    const targetFile = path.join(dataDir, "marquesinas.json");
+
     if (!text) {
-      console.warn("⚠️ Búsqueda web no disponible o cuota agotada. Manteniendo predicciones auténticas existentes en data/marquesinas.json sin sobreescribir con datos no verificados.");
+      console.warn("⚠️ Ningún modelo de IA pudo generar el JSON en este momento.");
+      // Check existing file
+      if (fs.existsSync(targetFile)) {
+        const existing = JSON.parse(fs.readFileSync(targetFile, "utf-8"));
+        if (existing.week === currentWeek) {
+          console.log(`ℹ️ La predicción existente ya corresponde a la semana actual (${currentWeek}).`);
+          process.exit(0);
+        }
+      }
+      console.warn("⚠️ Manteniendo predicciones existentes verificadas para evitar sobreescritura errónea.");
       process.exit(0);
     }
 
     const data = JSON.parse(text);
-
-    // Ensure output directory exists and write to data/
-    const dataDir = path.resolve("./data");
-    fs.mkdirSync(dataDir, { recursive: true });
-
     const jsonStr = JSON.stringify(data, null, 2);
-    fs.writeFileSync(path.join(dataDir, "marquesinas.json"), jsonStr, "utf-8");
+    fs.writeFileSync(targetFile, jsonStr, "utf-8");
 
     console.log(`✅ Predicciones generadas exitosamente`);
     console.log(`📁 Archivo guardado en: data/marquesinas.json`);
-    console.log(`\n📊 Resumen de predicciones:`);
+    console.log(`\n📊 Resumen de predicciones (${data.week}):`);
 
     for (const p of data.predictions) {
       console.log(`   ${p.certainty_label} — ${p.league}: ${p.home} vs ${p.away} | Gold: ${p.gold_buy}→${p.gold_sell} | ROI: ${p.roi_gold_pct}%`);
     }
   } catch (error) {
     console.error("❌ Error generando predicciones:", error.message);
-    console.warn("⚠️ Manteniendo predicciones existentes para evitar interrumpir la web.");
     process.exit(0);
   }
 }

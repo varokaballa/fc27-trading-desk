@@ -1912,13 +1912,14 @@ _Generado desde FC 27 Trading Desk Pro_`;
         // =========================================================================
         async function loadMarquesinas() {
             try {
+                const cacheBust = '?t=' + Date.now();
                 // Try relative paths for GitHub Pages, Vercel, and local
-                let res = await fetch('data/marquesinas.json');
+                let res = await fetch('data/marquesinas.json' + cacheBust);
                 if (!res.ok) {
-                    res = await fetch('public/data/marquesinas.json');
+                    res = await fetch('public/data/marquesinas.json' + cacheBust);
                 }
                 if (!res.ok) {
-                    res = await fetch('/data/marquesinas.json');
+                    res = await fetch('/data/marquesinas.json' + cacheBust);
                 }
                 if (!res.ok) throw new Error('No marquesinas data yet');
 

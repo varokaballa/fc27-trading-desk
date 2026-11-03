@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js 22
         uses: actions/setup-node@v4
@@ -31,10 +33,11 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
-      - name: Commit y push resultados
+      - name: Commit y push a producción (main y master)
         run: |
           git config user.name "FC27 Trading Bot"
           git config user.email "bot@tradingdesk.local"
           git add -A
-          git commit -m "chore: actualización automática Marquesinas semanales" || exit 0
-          git push
+          git commit -m "chore: actualización automática Marquesinas semanales [skip ci]" || exit 0
+          git push origin HEAD:master || true
+          git push origin HEAD:main || true
