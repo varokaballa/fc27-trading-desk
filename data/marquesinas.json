@@ -1,6 +1,8 @@
 {
   "week": "2026-W45",
   "generatedAt": "2026-11-03T21:00:00.000Z",
+  "is_international_break": false,
+  "international_break_notice": "Semana regular de clubes. Próximo Parón FIFA: 9 al 17 de Noviembre 2026 (Semana 46 — Clasificatorios y Nations League). En la W46 las Marquesinas pedirán Nacionalidades, no clubes.",
   "predictions": [
     {
       "league": "Bundesliga",
@@ -57,6 +59,36 @@
       "breakeven_gold": 685,
       "roi_gold_pct": 207,
       "strategy": "Duelo directo de Premier League en Old Trafford con impacto directo en puestos europeos. Inversión a descarte (600-650m) en oros y platas ingleses con riesgo cero; venta escalonada a la salida del SBC."
+    }
+  ],
+  "secondary_predictions": [
+    {
+      "league": "LaLiga EA Sports",
+      "home": "Valencia CF",
+      "away": "Real Madrid",
+      "certainty": "yellow",
+      "certainty_label": "🟡 ALTERNATIVA / PLAN B",
+      "gold_buy": 650,
+      "gold_sell": 2100,
+      "silver_buy": 350,
+      "silver_sell": 1300,
+      "breakeven_gold": 685,
+      "roi_gold_pct": 207,
+      "strategy": "Mestalla siempre genera un partido de máxima tensión y hostilidad deportiva. Si EA decide no incluir Atleti vs Barça para no saturar oros de Barcelona, este choque es el sustituto natural directo."
+    },
+    {
+      "league": "Ligue 1 McDonald's",
+      "home": "RC Lens",
+      "away": "Olympique de Marseille",
+      "certainty": "yellow",
+      "certainty_label": "🟡 ALTERNATIVA / PLAN B",
+      "gold_buy": 600,
+      "gold_sell": 1850,
+      "silver_buy": 300,
+      "silver_sell": 1150,
+      "breakeven_gold": 632,
+      "roi_gold_pct": 193,
+      "strategy": "Top Match oficial del fin de semana en Francia en el Stade Bollaert. Cobertura perfecta a precio de descarte en oros franceses comunes por si EA incluye un partido de Ligue 1."
     }
   ]
 }

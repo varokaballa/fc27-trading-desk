@@ -27,18 +27,23 @@ const currentWeek = getISOWeek(today);
 
 const prompt = `Eres un analista experto del mercado de EA SPORTS FC 27 Ultimate Team y un predictor especializado en el SBC semanal "Marquesinas Semanales" (Marquee Matchups).
 
-Tu objetivo es predecir los 4 partidos que EA seleccionará para las Marquesinas de esta semana, que se publican cada JUEVES a las 19:00 CET.
+Tu objetivo es predecir los 4 partidos titulares que EA seleccionará para las Marquesinas de esta semana (jueves 19:00 CET) MÁS 2 partidos secundarios de cobertura en el radar (Plan B).
 
 Hoy es ${isoDate} (semana ${currentWeek}).
 
-INSTRUCCIONES PASO A PASO:
+INSTRUCCIONES CLAVE:
 
-1. **BUSCA las Marquesinas del JUEVES PASADO**: Investiga qué partidos salieron la semana pasada y excluye esos clubes a menos que sea un derbi mundial irrepetible.
-2. **BUSCA el CALENDARIO REAL de partidos del próximo fin de semana** (viernes a domingo) en Top 5 Ligas (Premier, LaLiga, Serie A, Bundesliga, Ligue 1) y ligas secundarias.
-3. **SELECCIONA 4 PARTIDOS de 4 LIGAS DIFERENTES**:
-   - Prioriza derbis locales históricos (Rheinderby, Derbi de Turín/Milán, Clásicos, etc.).
-   - Partidos con gran afición y demanda de cartas de oro común y plata.
-   - Variedad: 3 ligas top y 1 liga secundaria o gran duelo.
+1. **PARÓN DE SELECCIONES (VENTANA FIFA)**:
+   - Comprueba si el próximo fin de semana corresponde a un Parón de Selecciones FIFA (por ejemplo, 9 al 17 de noviembre de 2026 u otras ventanas internacionales oficiales).
+   - SI HAY PARÓN FIFA: EA Sports cambia las marquesinas a PARTIDOS INTERNACIONALES DE SELECCIONES (Nations League, Eliminatorias Mundial, etc.). El requisito de trade es NACIONALIDAD (España, Italia, Francia, Inglaterra, Argentina, etc.).
+   - SI NO HAY PARÓN FIFA: Busca partidos de clubes en Top 5 Ligas Europeas y ligas secundarias.
+
+2. **BUSCA las Marquesinas del JUEVES PASADO**: Investiga qué partidos salieron la semana pasada y excluye esos clubes/países a menos que sea un clásico mundial histórico irrepetible.
+
+3. **SELECCIONA 4 PARTIDOS TITULARES + 2 PARTIDOS SECUNDARIOS (PLAN B)**:
+   - 4 Partidos Titulares: Los 4 candidatos con mayor probabilidad de salir en el SBC.
+   - 2 Partidos Secundarios: 2 alternativas de cobertura de riesgo (Plan B) por si EA rota liga o evita derbis obvios.
+
 4. **Calcula precios y break-even con la tasa EA (+5.263% en compras de 600-650m)**.
 
 FORMATO DE RESPUESTA (JSON estricto):
@@ -46,9 +51,11 @@ FORMATO DE RESPUESTA (JSON estricto):
 {
   "week": "${currentWeek}",
   "generatedAt": "${today.toISOString()}",
+  "is_international_break": true|false,
+  "international_break_notice": "Explicación breve del estado del calendario (ej: si hay parón FIFA o si es semana regular de ligas)",
   "predictions": [
     {
-      "league": "Nombre de la liga",
+      "league": "Nombre de la liga o torneo",
       "home": "Equipo local",
       "away": "Equipo visitante",
       "certainty": "green|blue|yellow",
@@ -61,10 +68,26 @@ FORMATO DE RESPUESTA (JSON estricto):
       "roi_gold_pct": 238,
       "strategy": "Explicación breve de la estrategia de compra"
     }
+  ],
+  "secondary_predictions": [
+    {
+      "league": "Nombre de la liga",
+      "home": "Equipo local",
+      "away": "Equipo visitante",
+      "certainty": "yellow",
+      "certainty_label": "🟡 ALTERNATIVA / PLAN B",
+      "gold_buy": 650,
+      "gold_sell": 2100,
+      "silver_buy": 350,
+      "silver_sell": 1300,
+      "breakeven_gold": 685,
+      "roi_gold_pct": 207,
+      "strategy": "Por qué este partido sirve de cobertura si EA rota"
+    }
   ]
 }
 
-Devuelve EXACTAMENTE 4 predicciones, cada una de una liga diferente.`;
+Devuelve EXACTAMENTE 4 predicciones titulares y 2 predicciones secundarias.`;
 
 async function main() {
   try {

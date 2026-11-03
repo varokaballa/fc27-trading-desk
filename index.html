@@ -831,7 +831,28 @@
                 <span class="text-[10px] text-slate-500 font-mono">Se actualiza automáticamente cada martes a las 02:30 CET vía GitHub Actions</span>
             </div>
 
-            <!-- MARQUESINAS MATCH CARDS GRID -->
+            <!-- FIFA INTERNATIONAL BREAK ALERT BANNER -->
+            <div id="marquesinaFifaBanner" class="p-3.5 rounded-xl border text-xs font-mono flex flex-wrap items-center justify-between gap-3 transition bg-brand-indigo/10 border-brand-indigo/30 text-slate-300">
+                <div class="flex items-center gap-2.5">
+                    <span class="text-base" id="marquesinaFifaIcon">⚽</span>
+                    <div>
+                        <strong id="marquesinaFifaTitle" class="text-white block font-bold">Modo Ligas de Clubes Activo</strong>
+                        <span id="marquesinaFifaText" class="text-[11px] text-slate-400 font-sans">Semana regular de ligas. Próximo Parón FIFA: 9 al 17 de Noviembre (Semana 46).</span>
+                    </div>
+                </div>
+                <span id="marquesinaFifaBadge" class="text-[10px] px-2 py-0.5 rounded bg-brand-emerald/20 text-brand-emerald border border-brand-emerald/30 font-bold whitespace-nowrap">CLUBES EN JUEGO</span>
+            </div>
+
+            <!-- MAIN PREDICTIONS HEADER -->
+            <div class="flex items-center justify-between pt-1">
+                <span class="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-1.5 font-mono">
+                    <span class="w-2 h-2 rounded-full bg-brand-emerald"></span>
+                    4 Partidos Titulares (Predicción Principal)
+                </span>
+                <span class="text-[10px] text-slate-400 font-mono">Objetivos prioritarios de subasta masiva</span>
+            </div>
+
+            <!-- MARQUESINAS MATCH CARDS GRID (TITULARES) -->
             <div id="marquesinaGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <!-- Placeholder while loading -->
                 <div class="col-span-full p-8 text-center text-slate-500 text-xs font-mono" id="marquesinaPlaceholder">
@@ -840,23 +861,39 @@
                 </div>
             </div>
 
-            <!-- MARQUESINAS PROTOCOL EXPLAINER -->
-            <div class="bg-brand-bg/70 p-4 rounded-xl border border-brand-border/60 text-xs text-slate-300 leading-relaxed space-y-2">
-                <div class="flex items-center gap-2 font-bold text-white text-sm">
-                    📖 Protocolo de Operación Marquesinas (Manual FC 27)
+            <!-- MARQUESINAS SECONDARY / ALTERNATIVES CONTAINER -->
+            <div id="marquesinaSecondaryWrapper" class="space-y-3 pt-3">
+                <div class="flex items-center justify-between border-t border-brand-border/60 pt-4">
+                    <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2 font-mono">
+                        <span>🔄</span>
+                        2 Partidos Secundarios / Cobertura en Radar (Plan B)
+                    </h4>
+                    <span class="text-[10px] text-slate-400 font-mono">Cobertura de riesgo por si EA rota ligas o evita derbis obvios</span>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-[11px]">
-                    <div class="space-y-1">
+                <div id="marquesinaSecondaryGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+            </div>
+
+            <!-- MARQUESINAS PROTOCOL EXPLAINER -->
+            <div class="bg-brand-bg/70 p-4 rounded-xl border border-brand-border/60 text-xs text-slate-300 leading-relaxed space-y-3">
+                <div class="flex items-center gap-2 font-bold text-white text-sm">
+                    📖 Protocolo de Operación Marquesinas & Parones de Selecciones (Manual FC 27)
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 font-mono text-[11px]">
+                    <div class="space-y-1 bg-brand-card/40 p-2.5 rounded-lg border border-brand-border/40">
                         <span class="text-brand-emerald font-bold block">FASE 1 — COMPRA (Mar 02:00 - Jue 08:00)</span>
-                        <p class="text-slate-400 font-sans">Puja masiva en subasta sobre oros y platas de los 8 clubes predichos. Precio objetivo: oros 600-700m, platas 250-500m.</p>
+                        <p class="text-slate-400 font-sans">Puja masiva en subasta sobre oros y platas de los clubes predichos. Precio objetivo: oros 600-700m, platas 250-500m.</p>
                     </div>
-                    <div class="space-y-1">
+                    <div class="space-y-1 bg-brand-card/40 p-2.5 rounded-lg border border-brand-border/40">
                         <span class="text-brand-amber font-bold block">FASE 2 — ESPERA (Jue 08:00 - 19:00)</span>
-                        <p class="text-slate-400 font-sans">Mantener inventario y no vender. A las 18:55 CET listar las cartas en la lista de transferencias a precios de techo.</p>
+                        <p class="text-slate-400 font-sans">Mantener inventario y no vender. A las 18:55 CET listar las cartas en transferencias con precios de techo (+150-250%).</p>
                     </div>
-                    <div class="space-y-1">
+                    <div class="space-y-1 bg-brand-card/40 p-2.5 rounded-lg border border-brand-border/40">
                         <span class="text-brand-rose font-bold block">FASE 3 — VENTA (Jue 19:05 - 21:00)</span>
-                        <p class="text-slate-400 font-sans">Venta inmediata a las 19:15 CET en los primeros 90 minutos de la Marquesina. Oros a 1.200-2.500m, platas a 800-1.800m.</p>
+                        <p class="text-slate-400 font-sans">Venta inmediata a las 19:15 CET en el pico de demanda del SBC. Oros a 1.800-2.500m, platas a 1.100-1.600m.</p>
+                    </div>
+                    <div class="space-y-1 bg-brand-indigo/20 p-2.5 rounded-lg border border-brand-indigo/40">
+                        <span class="text-brand-cyan font-bold block">🌍 PARONES FIFA (SELECCIONES)</span>
+                        <p class="text-slate-400 font-sans">Cuando hay parón de selecciones, EA pide <strong>NACIONALIDADES</strong>, no clubes. Se compran oros de los países en juego (España, Italia, Francia, Inglaterra, etc.) a descarte.</p>
                     </div>
                 </div>
             </div>
@@ -1942,13 +1979,40 @@ _Generado desde FC 27 Trading Desk Pro_`;
             if (lastUpdate) lastUpdate.innerText = data.generatedAt ? new Date(data.generatedAt).toLocaleString('es-ES') : 'Reciente';
             if (weekLabel) weekLabel.innerText = data.week || '--';
 
+            // FIFA International Break Banner
+            const fifaBanner = document.getElementById('marquesinaFifaBanner');
+            const fifaIcon = document.getElementById('marquesinaFifaIcon');
+            const fifaTitle = document.getElementById('marquesinaFifaTitle');
+            const fifaText = document.getElementById('marquesinaFifaText');
+            const fifaBadge = document.getElementById('marquesinaFifaBadge');
+
+            if (fifaBanner) {
+                fifaBanner.classList.remove('hidden');
+                if (data.is_international_break) {
+                    fifaBanner.className = 'p-3.5 rounded-xl border text-xs font-mono flex flex-wrap items-center justify-between gap-3 transition bg-brand-rose/10 border-brand-rose/40 text-slate-200';
+                    if (fifaIcon) fifaIcon.innerText = '🚨';
+                    if (fifaTitle) fifaTitle.innerText = '¡PARÓN DE SELECCIONES ACTIVO (VENTANA FIFA)!';
+                    if (fifaText) fifaText.innerText = data.international_break_notice || 'Marquesinas de Selecciones Nacionales en juego. Compra cartas por NACIONALIDAD (no por club).';
+                    if (fifaBadge) {
+                        fifaBadge.className = 'text-[10px] px-2 py-0.5 rounded bg-brand-rose/20 text-brand-rose border border-brand-rose/30 font-bold whitespace-nowrap animate-pulse';
+                        fifaBadge.innerText = 'MODO SELECCIONES';
+                    }
+                } else {
+                    fifaBanner.className = 'p-3.5 rounded-xl border text-xs font-mono flex flex-wrap items-center justify-between gap-3 transition bg-brand-indigo/10 border-brand-indigo/30 text-slate-300';
+                    if (fifaIcon) fifaIcon.innerText = '⚽';
+                    if (fifaTitle) fifaTitle.innerText = 'Modo Ligas de Clubes Activo';
+                    if (fifaText) fifaText.innerText = data.international_break_notice || 'Semana regular de ligas. Próximo Parón FIFA: 9 al 17 de Noviembre 2026.';
+                    if (fifaBadge) {
+                        fifaBadge.className = 'text-[10px] px-2 py-0.5 rounded bg-brand-emerald/20 text-brand-emerald border border-brand-emerald/30 font-bold whitespace-nowrap';
+                        fifaBadge.innerText = 'CLUBES EN JUEGO';
+                    }
+                }
+            }
+
             // Remove placeholder
             if (placeholder) placeholder.remove();
 
-            // Clear and render match cards
-            grid.innerHTML = '';
-
-            data.predictions.forEach((match, idx) => {
+            function buildCardHtml(match, headerTitle, customCertLabel, isSecondary = false) {
                 const certStyle = getCertaintyStyle(
                     match.certainty === 'green' ? 'green' :
                     match.certainty === 'blue' ? 'blue' : 'yellow'
@@ -1958,53 +2022,74 @@ _Generado desde FC 27 Trading Desk Pro_`;
                 const roiGold = match.gold_buy > 0 ? (((match.gold_sell * 0.95 - match.gold_buy) / match.gold_buy) * 100).toFixed(0) : 0;
                 const netSilver = Math.round((match.silver_sell * 0.95) - match.silver_buy);
 
-                const card = document.createElement('div');
-                card.className = 'bg-brand-card rounded-2xl p-4 border border-brand-border shadow-xl hover:border-brand-purple/60 transition space-y-3';
+                const borderAccent = isSecondary ? 'border-brand-amber/40 hover:border-brand-amber/80' : 'border-brand-border hover:border-brand-purple/60';
 
-                card.innerHTML = `
-                    <div class="flex items-start justify-between gap-2">
-                        <div>
-                            <span class="text-[10px] font-mono text-brand-purple uppercase font-bold tracking-wider">PARTIDO ${idx + 1} • ${match.league}</span>
-                            <h4 class="text-sm font-extrabold text-white mt-0.5">${match.home} vs ${match.away}</h4>
+                return `
+                    <div class="bg-brand-card rounded-2xl p-4 border ${borderAccent} shadow-xl transition space-y-3">
+                        <div class="flex items-start justify-between gap-2">
+                            <div>
+                                <span class="text-[10px] font-mono ${isSecondary ? 'text-brand-amber' : 'text-brand-purple'} uppercase font-bold tracking-wider">${headerTitle}</span>
+                                <h4 class="text-sm font-extrabold text-white mt-0.5">${match.home} vs ${match.away}</h4>
+                            </div>
+                            <span class="text-[9px] font-bold font-mono px-2 py-0.5 rounded border whitespace-nowrap ${certStyle}">
+                                ${customCertLabel || match.certainty_label || '🟡 HIPÓTESIS'}
+                            </span>
                         </div>
-                        <span class="text-[9px] font-bold font-mono px-2 py-0.5 rounded border whitespace-nowrap ${certStyle}">
-                            ${match.certainty_label || '🟡 HIPÓTESIS'}
-                        </span>
+
+                        <div class="bg-brand-bg/80 p-2.5 rounded-xl border border-brand-border/60 font-mono text-xs space-y-1.5">
+                            <div class="text-[10px] text-slate-400 font-bold uppercase border-b border-brand-border/40 pb-1">Oros Comunes / Únicos</div>
+                            <div class="flex justify-between text-slate-400 text-[11px]">
+                                <span>Compra (Martes subasta):</span>
+                                <strong class="text-brand-emerald">${(match.gold_buy || 650).toLocaleString()} m</strong>
+                            </div>
+                            <div class="flex justify-between text-slate-400 text-[11px]">
+                                <span>Venta (Jue 19:15 CET):</span>
+                                <strong class="text-brand-cyan">${(match.gold_sell || 1800).toLocaleString()} m</strong>
+                            </div>
+                            <div class="flex justify-between text-[11px] pt-1 border-t border-brand-border/40">
+                                <span class="text-slate-300">Neto Post-Tax:</span>
+                                <strong class="text-brand-emerald font-black">+${netGold.toLocaleString()} m (+${roiGold}%)</strong>
+                            </div>
+                        </div>
+
+                        <div class="bg-brand-bg/80 p-2 rounded-xl border border-brand-border/60 font-mono text-[11px] space-y-1">
+                            <div class="text-[10px] text-slate-400 font-bold uppercase">Platas</div>
+                            <div class="flex justify-between text-slate-400">
+                                <span>Compra → Venta:</span>
+                                <span><strong class="text-brand-emerald">${(match.silver_buy || 350).toLocaleString()}</strong> → <strong class="text-brand-cyan">${(match.silver_sell || 1200).toLocaleString()}</strong> m</span>
+                            </div>
+                            <div class="flex justify-between text-slate-400">
+                                <span>Neto:</span>
+                                <strong class="text-brand-emerald">+${netSilver.toLocaleString()} m</strong>
+                            </div>
+                        </div>
+
+                        ${match.strategy ? `<p class="text-[11px] text-slate-400 leading-snug">${match.strategy}</p>` : ''}
                     </div>
-
-                    <div class="bg-brand-bg/80 p-2.5 rounded-xl border border-brand-border/60 font-mono text-xs space-y-1.5">
-                        <div class="text-[10px] text-slate-400 font-bold uppercase border-b border-brand-border/40 pb-1">Oros Comunes / Únicos</div>
-                        <div class="flex justify-between text-slate-400 text-[11px]">
-                            <span>Compra (Martes subasta):</span>
-                            <strong class="text-brand-emerald">${(match.gold_buy || 650).toLocaleString()} m</strong>
-                        </div>
-                        <div class="flex justify-between text-slate-400 text-[11px]">
-                            <span>Venta (Jue 19:15 CET):</span>
-                            <strong class="text-brand-cyan">${(match.gold_sell || 1800).toLocaleString()} m</strong>
-                        </div>
-                        <div class="flex justify-between text-[11px] pt-1 border-t border-brand-border/40">
-                            <span class="text-slate-300">Neto Post-Tax:</span>
-                            <strong class="text-brand-emerald font-black">+${netGold.toLocaleString()} m (+${roiGold}%)</strong>
-                        </div>
-                    </div>
-
-                    <div class="bg-brand-bg/80 p-2 rounded-xl border border-brand-border/60 font-mono text-[11px] space-y-1">
-                        <div class="text-[10px] text-slate-400 font-bold uppercase">Platas</div>
-                        <div class="flex justify-between text-slate-400">
-                            <span>Compra → Venta:</span>
-                            <span><strong class="text-brand-emerald">${(match.silver_buy || 350).toLocaleString()}</strong> → <strong class="text-brand-cyan">${(match.silver_sell || 1200).toLocaleString()}</strong> m</span>
-                        </div>
-                        <div class="flex justify-between text-slate-400">
-                            <span>Neto:</span>
-                            <strong class="text-brand-emerald">+${netSilver.toLocaleString()} m</strong>
-                        </div>
-                    </div>
-
-                    ${match.strategy ? `<p class="text-[11px] text-slate-400 leading-snug">${match.strategy}</p>` : ''}
                 `;
+            }
 
-                grid.appendChild(card);
+            // Clear and render match cards (Titulares)
+            grid.innerHTML = '';
+            data.predictions.forEach((match, idx) => {
+                grid.innerHTML += buildCardHtml(match, `PARTIDO ${idx + 1} • ${match.league}`, match.certainty_label, false);
             });
+
+            // Render secondary match cards (Alternativas / Plan B)
+            const secGrid = document.getElementById('marquesinaSecondaryGrid');
+            const secWrapper = document.getElementById('marquesinaSecondaryWrapper');
+            if (secGrid) {
+                secGrid.innerHTML = '';
+                const secondaries = data.secondary_predictions || [];
+                if (secondaries.length > 0) {
+                    if (secWrapper) secWrapper.classList.remove('hidden');
+                    secondaries.forEach((match, idx) => {
+                        secGrid.innerHTML += buildCardHtml(match, `PLAN B #${idx + 1} • ${match.league}`, match.certainty_label || '🟡 ALTERNATIVA', true);
+                    });
+                } else {
+                    if (secWrapper) secWrapper.classList.add('hidden');
+                }
+            }
 
             // Store for WhatsApp copy
             window._marquesinaData = data;
@@ -2019,17 +2104,38 @@ _Generado desde FC 27 Trading Desk Pro_`;
 
             let msg = `🏆 *PREDICCIÓN MARQUESINAS FC 27 — ${data.week || 'Esta Semana'}*\n`;
             msg += `━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
-            msg += `📅 Generado: ${data.generatedAt ? new Date(data.generatedAt).toLocaleString('es-ES') : 'Reciente'}\n\n`;
+            msg += `📅 Generado: ${data.generatedAt ? new Date(data.generatedAt).toLocaleString('es-ES') : 'Reciente'}\n`;
+            if (data.international_break_notice) {
+                msg += `🌍 *Calendario:* ${data.international_break_notice}\n`;
+            }
+            msg += `\n🎯 *4 PARTIDOS TITULARES (PRIMARIOS):*\n`;
 
             data.predictions.forEach((m, i) => {
-                msg += `⚽ *PARTIDO ${i + 1}: ${m.home} vs ${m.away}*\n`;
+                msg += `\n⚽ *PARTIDO ${i + 1}: ${m.home} vs ${m.away}*\n`;
                 msg += `🏟️ Liga: ${m.league}\n`;
                 msg += `🔖 Certeza: ${m.certainty_label}\n`;
                 msg += `🟢 Comprar: Oros a ${m.gold_buy}m / Platas a ${m.silver_buy}m\n`;
                 msg += `🔵 Vender (Jue 19:15): Oros a ${m.gold_sell}m / Platas a ${m.silver_sell}m\n`;
                 if (m.strategy) msg += `💡 ${m.strategy}\n`;
-                msg += `\n`;
             });
+
+            if (data.secondary_predictions && data.secondary_predictions.length) {
+                msg += `\n━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+                msg += `🔄 *2 PARTIDOS SECUNDARIOS / COBERTURA (PLAN B):*\n`;
+                data.secondary_predictions.forEach((m, i) => {
+                    msg += `\n🟡 *PLAN B #${i + 1}: ${m.home} vs ${m.away}* (${m.league})\n`;
+                    msg += `🟢 Comprar: ${m.gold_buy}m | 🔵 Vender: ${m.gold_sell}m\n`;
+                    if (m.strategy) msg += `💡 ${m.strategy}\n`;
+                });
+            }
+
+            msg += `\n━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+            msg += `⚠️ *Break-Even EA Tax: +5.263% limpio.*\n`;
+            msg += `_FC 27 Trading Desk Pro — Marquesinas AI_`;
+
+            navigator.clipboard.writeText(msg).then(() => {
+                showToast('✅ Predicción de Marquesinas copiada para WhatsApp / Telegram');
+            }).catch(() => {
 
             msg += `⚠️ *Break-Even EA Tax: +5.263% limpio.*\n`;
             msg += `━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
