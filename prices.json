@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-11-07T21:38:55.247Z",
-  "active_promo": "Ultimate Scream",
-  "daily_trend_summary": "Pánico de apertura de sobres tras el lanzamiento del Equipo 2 de Ultimate Scream a las 19:00 CET en FC 27, generando puntos de entrada masivos en cartas promo meta y un rebote sólido en Iconos y Héroes de alta gama previa a la jornada de Champions.",
+  "updated_at": "2026-11-08T21:54:27.761Z",
+  "active_promo": "Centurions",
+  "daily_trend_summary": "Pánico de venta post-FUT Champions combinado con la inyección de la Mini-Release de Centurions; las cartas top tier e Iconos/Héroes meta tocan suelo de soporte ideal para rebote de mitad de semana.",
   "source": "FUTBIN & FUT.GG Daily Meta Scout — FC 27 Market",
   "items": [
     {
@@ -12,10 +12,10 @@
       "category": "hero",
       "version": "Base Icon",
       "certainty": "green",
-      "certainty_label": "🟢 TOP META / ICONO BASE",
-      "current_price": 1450000,
-      "buy_support": 1320000,
-      "sell_target": 1640000,
+      "certainty_label": "🟢 TOP META ICON",
+      "current_price": 1280000,
+      "buy_support": 1160000,
+      "sell_target": 1420000,
       "best_buy_days": [
         0,
         1
@@ -24,9 +24,9 @@
         4,
         5
       ],
-      "futbin_url": "https://www.futbin.com/27/players?search=yaya+toure",
-      "futgg_url": "https://www.fut.gg/27/players/?search=yaya+toure",
-      "strategy_note": "Su ascenso oficial a Icono Base en FC 27 le otorga química perfecta en cualquier plantilla. Tras la caída de las 19:00 por apertura de sobres promo, su suelo en 1.32M es compra obligatoria de cara a FC Champions."
+      "futbin_url": "https://www.futbin.com/27/players?search=Yaya+Toure",
+      "futgg_url": "https://www.fut.gg/27/players/?search=Yaya+Toure",
+      "strategy_note": "Su reciente ascenso a Icono en FC 27 le otorga química perfecta en cualquier plantilla. Tras las liquidaciones de FUT Champions de hoy domingo noche, presenta un rebote garantizado para el jueves previo a la siguiente jornada."
     },
     {
       "id": "david-ginola-fut-hero",
@@ -36,10 +36,10 @@
       "category": "hero",
       "version": "FUT Hero",
       "certainty": "green",
-      "certainty_label": "🟢 HÉROE ESTRELLA / ALTA DEMANDA",
-      "current_price": 1820000,
-      "buy_support": 1650000,
-      "sell_target": 2050000,
+      "certainty_label": "🟢 LÍDER DE MERCADO",
+      "current_price": 1650000,
+      "buy_support": 1500000,
+      "sell_target": 1820000,
       "best_buy_days": [
         0,
         1
@@ -48,9 +48,9 @@
         4,
         5
       ],
-      "futbin_url": "https://www.futbin.com/27/players?search=ginola",
-      "futgg_url": "https://www.fut.gg/27/players/?search=ginola",
-      "strategy_note": "El atacante más desequilibrante de FC 27 con 5 estrellas de pierna mala y filigranas. Sufre 'panic selling' temporal por la salida de atacantes Scream; comprar en soporte y listar con sobreprecio nocturno."
+      "futbin_url": "https://www.futbin.com/27/players?search=David+Ginola",
+      "futgg_url": "https://www.fut.gg/27/players/?search=David+Ginola",
+      "strategy_note": "Mantiene el estatus de carta ofensiva más desequilibrante en FC 27 por sus 5 estrellas de pierna mala y skills. Comprar durante la bajada nocturna dominical y vender con el hype de clasificatorios de Rivals."
     },
     {
       "id": "eden-hazard-fut-hero",
@@ -60,10 +60,34 @@
       "category": "hero",
       "version": "FUT Hero",
       "certainty": "blue",
-      "certainty_label": "🔵 META FLIP / VOLATILIDAD MEDIA",
-      "current_price": 620000,
-      "buy_support": 565000,
-      "sell_target": 700000,
+      "certainty_label": "🔵 ALTA LIQUIDEZ",
+      "current_price": 540000,
+      "buy_support": 490000,
+      "sell_target": 605000,
+      "best_buy_days": [
+        0,
+        1
+      ],
+      "best_sell_days": [
+        3,
+        4
+      ],
+      "futbin_url": "https://www.futbin.com/27/players?search=Eden+Hazard",
+      "futgg_url": "https://www.fut.gg/27/players/?search=Eden+Hazard",
+      "strategy_note": "Extrema agilidad en el nuevo motor de animaciones de FC 27. Sufre ventas por pánico tras las recompensas, lo que abre una ventana perfecta de sniping por debajo de 500k con venta antes del viernes."
+    },
+    {
+      "id": "jude-bellingham-centurions",
+      "name": "Jude Bellingham",
+      "rating": 91,
+      "position": "CM",
+      "category": "promo",
+      "version": "Centurions",
+      "certainty": "green",
+      "certainty_label": "🟢 PROMO TOP TIER",
+      "current_price": 2100000,
+      "buy_support": 1920000,
+      "sell_target": 2350000,
       "best_buy_days": [
         1,
         2
@@ -72,81 +96,57 @@
         4,
         5
       ],
-      "futbin_url": "https://www.futbin.com/27/players?search=eden+hazard",
-      "futgg_url": "https://www.fut.gg/27/players/?search=eden+hazard",
-      "strategy_note": "Carta insignia de Héroes en FC 27 con aceleración explosiva y PlayStyle+ de Regate Hábil. Absorbe la demanda de extremos de LaLiga y Premier League con fluctuaciones de 50k-80k monedas diarias."
+      "futbin_url": "https://www.futbin.com/27/players?search=Jude+Bellingham",
+      "futgg_url": "https://www.fut.gg/27/players/?search=Jude+Bellingham",
+      "strategy_note": "La carta estandarte del Equipo 1 de Centurions en FC 27. El flujo de apertura de sobres dominicales ha saturado temporalmente la oferta; entrar en soporte durante la madrugada del lunes para flipear el jueves."
     },
     {
-      "id": "rafael-leao-ultimate-scream",
-      "name": "Rafael Leão",
-      "rating": 89,
-      "position": "LW",
+      "id": "cole-palmer-centurions",
+      "name": "Cole Palmer",
+      "rating": 88,
+      "position": "CAM",
       "category": "promo",
-      "version": "Ultimate Scream",
-      "certainty": "green",
-      "certainty_label": "🟢 HYPO / PROMO ACTIVA",
-      "current_price": 980000,
-      "buy_support": 890000,
-      "sell_target": 1110000,
+      "version": "Centurions",
+      "certainty": "blue",
+      "certainty_label": "🔵 VOLATILIDAD ALTA",
+      "current_price": 420000,
+      "buy_support": 380000,
+      "sell_target": 470000,
       "best_buy_days": [
-        0,
-        6
-      ],
-      "best_sell_days": [
-        3,
-        4
-      ],
-      "futbin_url": "https://www.futbin.com/27/players?search=rafael+leao",
-      "futgg_url": "https://www.fut.gg/27/players/?search=rafael+leao",
-      "strategy_note": "Carta estelar de la promo Ultimate Scream lanzada hoy. Cuenta con boost nocturno de estadísticas en FC 27 y PlayStyle+ Paso Rápido. Sniping agresivo durante la primera oleada de relámpago."
-    },
-    {
-      "id": "federico-valverde-ultimate-scream",
-      "name": "Federico Valverde",
-      "rating": 89,
-      "position": "CM",
-      "category": "promo",
-      "version": "Ultimate Scream",
-      "certainty": "green",
-      "certainty_label": "🟢 TIER 1 / BOX TO BOX META",
-      "current_price": 850000,
-      "buy_support": 775000,
-      "sell_target": 960000,
-      "best_buy_days": [
-        0,
-        6
-      ],
-      "best_sell_days": [
-        3,
-        4
-      ],
-      "futbin_url": "https://www.futbin.com/27/players?search=valverde",
-      "futgg_url": "https://www.fut.gg/27/players/?search=valverde",
-      "strategy_note": "El centrocampista todoterreno definitivo de la promo de hoy. Su link directo con Real Madrid y PlayStyle+ Implacable garantizan una subida explosiva cuando termine la oferta de sobres del fin de semana."
-    },
-    {
-      "id": "jules-kounde-ultimate-scream",
-      "name": "Jules Koundé",
-      "rating": 87,
-      "position": "CB",
-      "category": "promo",
-      "version": "Ultimate Scream",
-      "certainty": "yellow",
-      "certainty_label": "🟡 ALTA VOLATILIDAD / RIESGO CONTROLADO",
-      "current_price": 430000,
-      "buy_support": 390000,
-      "sell_target": 485000,
-      "best_buy_days": [
-        0,
-        1
+        1,
+        2
       ],
       "best_sell_days": [
         4,
         5
       ],
-      "futbin_url": "https://www.futbin.com/27/players?search=kounde",
-      "futgg_url": "https://www.fut.gg/27/players/?search=kounde",
-      "strategy_note": "Defensor central meta con 85 de ritmo y Anticipación+. Su precio está sufriendo alta volatilidad en sus primeras horas en el mercado de FC 27; comprar en subastas por debajo de 390k para venta rápida el jueves."
+      "futbin_url": "https://www.futbin.com/27/players?search=Cole+Palmer",
+      "futgg_url": "https://www.fut.gg/27/players/?search=Cole+Palmer",
+      "strategy_note": "PlayStyles+ mejorados en FC 27 que lo vuelven el MCO más buscado de la Premier League. Aprovechar caídas por aperturas de sobres de la tienda a las 19:00 CET para asegurar compras en soporte."
+    },
+    {
+      "id": "eduardo-camavinga-centurions",
+      "name": "Eduardo Camavinga",
+      "rating": 87,
+      "position": "CDM",
+      "category": "promo",
+      "version": "Centurions",
+      "certainty": "yellow",
+      "certainty_label": "🟡 RIESGO MEDIO / REBOTE",
+      "current_price": 285000,
+      "buy_support": 258000,
+      "sell_target": 320000,
+      "best_buy_days": [
+        2,
+        3
+      ],
+      "best_sell_days": [
+        4,
+        5
+      ],
+      "futbin_url": "https://www.futbin.com/27/players?search=Eduardo+Camavinga",
+      "futgg_url": "https://www.fut.gg/27/players/?search=Eduardo+Camavinga",
+      "strategy_note": "Polivalencia clave MCD/MC/LI en FC 27 y enlaces directos a Real Madrid y Francia. Su precio está sufriendo subcotización por la Mini-Release, ofreciendo margen de 15% limpio de rebote."
     },
     {
       "id": "mbappe-91",
